@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eyes MAHALO | 松山市味酒町のまつげパーマ専門店</title>
+  <title>Eyes MAHALO ｜ 松山市味酒町のまつげパーマ専門店</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
   <script>
     tailwind.config = {
       theme: {
@@ -17,12 +17,15 @@
               bg: '#FAF8F5',
               card: '#FFFFFF',
               green: '#2D5A43',
+              'green-dark': '#1C3A2B',
               'green-light': '#EBF3EE',
               sand: '#E2D9C8',
+              'sand-light': '#F6F3EC',
+              accent: '#C8A86B',
               text: '#38322E',
               muted: '#736B65',
               line: '#06C755',
-              'line-hover': '#05B34C',
+              'line-dark': '#05b04b',
             }
           },
           fontFamily: {
@@ -35,81 +38,446 @@
   </script>
   <style>
     body {
-      background-color: #FAF8F5;
+      background-color: #ede9e1;
       color: #38322E;
       font-family: 'Zen Kaku Gothic New', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .shadow-soft {
+      box-shadow: 0 8px 25px -4px rgba(45, 90, 67, 0.08);
+    }
+    .shadow-floating {
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+    /* Prevent single word breaking / unnatural line breaks */
+    .keep-all {
       word-break: keep-all;
       overflow-wrap: break-word;
     }
-    .font-serif-custom {
-      font-family: 'Shippori Mincho', serif;
-    }
-    .balance-text {
-      text-wrap: balance;
-    }
   </style>
 </head>
-<body class="bg-mahalo-bg text-mahalo-text antialiased">
+<body class="antialiased selection:bg-mahalo-green-light selection:text-mahalo-green">
 
-  <!-- Sticky Header -->
-  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-mahalo-sand/40 py-2.5 px-4 flex justify-between items-center max-w-md mx-auto">
-    <div class="flex items-center gap-1.5">
-      <span class="text-xs font-serif-custom font-bold text-mahalo-green tracking-wider">Eyes MAHALO</span>
-    </div>
-    <a href="https://lin.ee/q8vBvt1" target="_blank" rel="noopener noreferrer" class="bg-mahalo-line text-white text-xs font-bold px-3 py-1.5 rounded-full flex items-center gap-1 shadow-sm hover:bg-mahalo-line-hover transition">
-      💚 LINE予約・相談
-    </a>
-  </header>
+  <div class="max-w-[430px] mx-auto bg-mahalo-bg min-h-screen relative shadow-2xl overflow-hidden pb-24 border-x border-mahalo-sand/60">
 
-  <main class="max-w-md mx-auto bg-white min-h-screen shadow-xl pb-10">
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-mahalo-sand/50 px-4 py-2.5 flex justify-between items-center shadow-sm">
+      <div class="flex items-center gap-2">
+        <div class="w-8 h-8 rounded-full bg-mahalo-green-light flex items-center justify-center text-mahalo-green border border-mahalo-green/20 shrink-0">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+            <path d="M12,2 C12,2 14.5,7 19.5,9.5 C19.5,9.5 14.5,12 12,17 C12,17 9.5,12 4.5,9.5 C4.5,9.5 9.5,7 12,2 Z" opacity="0.8"/>
+            <path d="M12,7 C12,7 13.5,10 16.5,11.5 C16.5,11.5 13.5,13 12,16 C12,16 10.5,13 7.5,11.5 C7.5,11.5 10.5,10 12,7 Z" fill="#C8A86B"/>
+          </svg>
+        </div>
+        <div>
+          <span class="block text-xs font-serif font-bold text-mahalo-green tracking-wider leading-none">Eyes MAHALO</span>
+          <span class="text-[9px] text-mahalo-muted font-medium tracking-tight">松山市味酒町 ｜ まつげパーマ専門店</span>
+        </div>
+      </div>
+      <a href="https://lin.ee/q8vBvt1" target="_blank" rel="noopener noreferrer" class="bg-mahalo-line hover:bg-mahalo-line-dark text-white text-xs font-bold px-3 py-1.5 rounded-full flex items-center gap-1 shadow-md transition transform active:scale-95">
+        <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 5.86 2 10.63c0 2.92 1.63 5.48 4.14 7.04-.18.66-.66 2.39-.76 2.76-.12.46.17.45.36.33.15-.1 2.36-1.57 3.31-2.22.63.09 1.28.14 1.95.14 5.52 0 10-3.86 10-8.63S17.52 2 12 2z"/></svg>
+        <span>💚 LINE予約</span>
+      </a>
+    </header>
 
-    <!-- 1. First View -->
-    <section class="relative bg-mahalo-bg pt-5 pb-6 px-4 border-b border-mahalo-sand/30">
-      <div class="text-center mb-3">
-        <span class="inline-block bg-mahalo-green-light text-mahalo-green text-[11px] px-3 py-0.5 rounded-full font-bold mb-1.5">松山市・味酒町｜まつげパーマ専門</span>
-        <h1 class="text-2xl font-serif-custom font-bold text-mahalo-green tracking-wide">Eyes MAHALO</h1>
+    <section class="relative bg-gradient-to-b from-mahalo-sand-light via-mahalo-bg to-white pt-6 pb-6 px-4 text-center border-b border-mahalo-sand/40">
+      
+      <!-- Location Badge -->
+      <div class="inline-flex items-center gap-1.5 bg-mahalo-green-light text-mahalo-green text-[11px] font-bold px-3 py-0.5 rounded-full mb-3 border border-mahalo-green/20">
+        <span class="w-1.5 h-1.5 rounded-full bg-mahalo-green"></span>
+        <span>松山市・味酒町 ｜ まつげパーマ専門店</span>
       </div>
 
-      <!-- 既存ファーストビュー画像 (image.png) -->
-      <div class="rounded-xl overflow-hidden shadow-md mb-4 border border-mahalo-sand/40">
-        <img src="https://www.hair-mahalo.com/wp-content/uploads/top_img004.jpg" alt="Eyes MAHALO まつげパーマ仕上がり" class="w-full h-auto object-cover">
+      <h1 class="text-2xl font-serif font-bold text-mahalo-green mb-2 tracking-wide">
+        Eyes MAHALO
+      </h1>
+
+      <!-- Main FV Image (image.png) -->
+      <div class="rounded-2xl overflow-hidden shadow-soft border border-mahalo-sand/60 mb-4 bg-white">
+        <img src="https://momowari.github.io/Eyes-MAHALO/image.png" alt="Eyes MAHALO メインアイキャッチ" class="w-full h-auto object-cover block">
       </div>
 
-      <!-- キャッチコピー（改行崩れ完全防止） -->
-      <div class="bg-mahalo-green-light/40 rounded-xl p-4 text-center border border-mahalo-sand/30 mb-4 space-y-2">
-        <p class="text-lg font-serif-custom font-bold text-mahalo-green leading-snug balance-text">
-          どんなまつげも、あきらめない。
+      <!-- Catchphrase Block with Line Break Protections -->
+      <div class="my-4 space-y-2 bg-white/80 p-4 rounded-2xl border border-mahalo-sand/50 shadow-soft">
+        <p class="text-lg font-serif font-bold text-mahalo-green tracking-tight leading-snug">
+          <span class="inline-block">どんなまつげも、</span><span class="inline-block">あきらめない。</span>
         </p>
-        <p class="text-xs text-mahalo-text font-medium leading-relaxed balance-text">
-          まつげを育てながら、きれいを楽しむ。<br>
-          <span class="text-sm font-bold text-mahalo-green block mt-1">最高のパーマライフを。</span>
+        <p class="text-xs text-mahalo-text leading-relaxed font-medium">
+          <span class="inline-block">まつげを育てながら、</span><span class="inline-block">きれいを楽しむ。</span><br>
+          <span class="font-bold text-mahalo-green text-sm underline decoration-mahalo-accent decoration-2 inline-block mt-1">最高のパーマライフを。</span>
         </p>
       </div>
 
-      <!-- 料金 & 特徴カード -->
-      <div class="bg-white rounded-xl p-3 shadow-sm border border-mahalo-sand/40 text-center mb-4">
-        <div class="grid grid-cols-2 divide-x divide-mahalo-sand/30 mb-2">
-          <div class="px-1">
-            <span class="text-[10px] text-mahalo-muted block">まつげパーマ</span>
-            <span class="text-lg font-bold text-mahalo-green">4,000<span class="text-xs font-normal">円</span></span>
+      <!-- Price Box -->
+      <div class="bg-white rounded-2xl p-3.5 border border-mahalo-sand/70 shadow-soft my-4 text-xs text-mahalo-text space-y-2.5">
+        <div class="grid grid-cols-2 gap-2 text-center">
+          <div class="bg-mahalo-sand-light/70 p-2.5 rounded-xl border border-mahalo-sand/40">
+            <span class="text-[10px] text-mahalo-muted block font-medium">まつげパーマ</span>
+            <span class="text-base font-bold text-mahalo-green">4,000円 <span class="text-[9px] text-mahalo-muted font-normal">(税込)</span></span>
           </div>
-          <div class="px-1">
-            <span class="text-[10px] text-mahalo-muted block">根元パーマ</span>
-            <span class="text-lg font-bold text-mahalo-green">3,000<span class="text-xs font-normal">円</span></span>
+          <div class="bg-mahalo-sand-light/70 p-2.5 rounded-xl border border-mahalo-sand/40">
+            <span class="text-[10px] text-mahalo-muted block font-medium">根元パーマ<span class="text-[9px] text-mahalo-accent block">(メンテナンス)</span></span>
+            <span class="text-base font-bold text-mahalo-green">3,000円 <span class="text-[9px] text-mahalo-muted font-normal">(税込)</span></span>
           </div>
         </div>
-        <div class="pt-2 border-t border-mahalo-sand/30 flex justify-around text-[11px] font-bold text-mahalo-muted">
-          <span>歴15年以上｜中岡有里</span>
+
+        <div class="flex justify-around items-center text-[10px] font-medium text-mahalo-muted pt-2 border-t border-mahalo-sand/40">
+          <span>歴15年以上 ｜ 中岡有里</span>
+          <span class="text-mahalo-sand">|</span>
           <span>遠赤外線 × 煌水</span>
         </div>
       </div>
 
-      <!-- CTA 1 -->
-      <a href="https://lin.ee/q8vBvt1" target="_blank" rel="noopener noreferrer" class="block w-full bg-mahalo-line text-white font-bold py-3.5 px-4 rounded-xl shadow-md text-center text-sm flex items-center justify-center gap-2 hover:bg-mahalo-line-hover transition">
-        <span>💚</span> LINEで予約・相談
+      <!-- FV LINE CTA Button -->
+      <a href="https://lin.ee/q8vBvt1" target="_blank" rel="noopener noreferrer" class="w-full bg-mahalo-line hover:bg-mahalo-line-dark text-white font-bold py-3.5 px-4 rounded-xl shadow-md flex items-center justify-center gap-2 transition transform active:scale-98">
+        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 5.86 2 10.63c0 2.92 1.63 5.48 4.14 7.04-.18.66-.66 2.39-.76 2.76-.12.46.17.45.36.33.15-.1 2.36-1.57 3.31-2.22.63.09 1.28.14 1.95.14 5.52 0 10-3.86 10-8.63S17.52 2 12 2z"/></svg>
+        <span class="text-sm">💚 LINEで予約・ご相談（無料）</span>
       </a>
     </section>
 
-    <!-- 2. 悩みへの共感 -->
-    <section class="py-8 px-5 bg-white border-b border-mahalo-sand/30">
-      <h2 class="text-center
+    <section class="p-5 bg-white border-b border-mahalo-sand/30">
+      <div class="text-center mb-4">
+        <span class="text-[10px] font-bold text-mahalo-accent uppercase tracking-widest bg-mahalo-sand-light px-2.5 py-0.5 rounded-full">CONCEPT</span>
+        <h2 class="text-base font-serif font-bold text-mahalo-green mt-1">こんなまつげの悩み、ありませんか？</h2>
+      </div>
+
+      <div class="grid grid-cols-2 gap-2 text-xs mb-4">
+        <div class="bg-mahalo-bg p-2.5 rounded-xl border border-mahalo-sand/40 flex items-center gap-1.5">
+          <span class="text-mahalo-accent font-bold">✔</span>
+          <span>短い・細い・硬い</span>
+        </div>
+        <div class="bg-mahalo-bg p-2.5 rounded-xl border border-mahalo-sand/40 flex items-center gap-1.5">
+          <span class="text-mahalo-accent font-bold">✔</span>
+          <span>左右差がある</span>
+        </div>
+        <div class="bg-mahalo-bg p-2.5 rounded-xl border border-mahalo-sand/40 flex items-center gap-1.5">
+          <span class="text-mahalo-accent font-bold">✔</span>
+          <span>上がりにくい・落ちる</span>
+        </div>
+        <div class="bg-mahalo-bg p-2.5 rounded-xl border border-mahalo-sand/40 flex items-center gap-1.5">
+          <span class="text-mahalo-accent font-bold">✔</span>
+          <span>毎日ビューラー使用</span>
+        </div>
+      </div>
+
+      <div class="bg-mahalo-green-light p-3.5 rounded-xl border border-mahalo-green/20 text-center">
+        <p class="text-xs font-bold text-mahalo-green leading-relaxed">
+          「どんなまつげも、あきらめない。」<br>
+          <span class="font-normal text-mahalo-text text-[11px] mt-1 block">一人ひとりの生え癖やまぶたの形に向き合います。</span>
+        </p>
+      </div>
+    </section>
+
+    <section class="p-5 bg-mahalo-bg border-b border-mahalo-sand/30 space-y-4">
+      <div class="text-center">
+        <span class="text-[10px] font-bold text-mahalo-accent uppercase tracking-widest bg-white px-2.5 py-0.5 rounded-full border border-mahalo-sand/40">FEATURES</span>
+        <h2 class="text-base font-serif font-bold text-mahalo-green mt-1">Eyes MAHALO の特徴</h2>
+      </div>
+
+      <!-- Feature 1 -->
+      <div class="bg-white p-4 rounded-xl border border-mahalo-sand/50 shadow-soft space-y-1.5">
+        <h3 class="font-bold text-xs text-mahalo-green flex items-center gap-2">
+          <span class="w-5 h-5 rounded-full bg-mahalo-green text-white text-[10px] flex items-center justify-center shrink-0">1</span>
+          一人ひとりのまつげを見てカールを決定
+        </h3>
+        <p class="text-[11px] text-mahalo-muted leading-relaxed pl-7">
+          長さ、太さ、硬さ、生え癖、左右差をしっかり確認。全員同じカールではなく、その人に一番似合うカールをご提案します。
+        </p>
+      </div>
+
+      <!-- Feature 2 -->
+      <div class="bg-white p-4 rounded-xl border border-mahalo-sand/50 shadow-soft space-y-1.5">
+        <h3 class="font-bold text-xs text-mahalo-green flex items-center gap-2">
+          <span class="w-5 h-5 rounded-full bg-mahalo-green text-white text-[10px] flex items-center justify-center shrink-0">2</span>
+          左右でロッドの強さを変える細やかな施術
+        </h3>
+        <p class="text-[11px] text-mahalo-muted leading-relaxed pl-7">
+          左右の目の大きさやまぶたの厚みに合わせ、小さいロッドで根元を上げたり、大きめのロッドでまぶたとの距離を調整します。
+        </p>
+      </div>
+
+      <!-- Feature 3 -->
+      <div class="bg-white p-4 rounded-xl border border-mahalo-sand/50 shadow-soft space-y-1.5 border-l-4 border-l-mahalo-accent">
+        <h3 class="font-bold text-xs text-mahalo-green flex items-center justify-between">
+          <span class="flex items-center gap-2">
+            <span class="w-5 h-5 rounded-full bg-mahalo-accent text-white text-[10px] flex items-center justify-center shrink-0">3</span>
+            根元パーマ（3,000円）のご提案
+          </span>
+          <span class="text-[9px] bg-mahalo-sand-light text-mahalo-green px-1.5 py-0.5 rounded">メンテナンス</span>
+        </h3>
+        <p class="text-[11px] text-mahalo-muted leading-relaxed pl-7">
+          「毛先はまだ上がっているけれど根元が伸びてきた」という3週間以内のメンテナンスに最適。自まつげの負担を抑えて常に綺麗を保てます。
+        </p>
+      </div>
+    </section>
+
+    <section class="p-5 bg-gradient-to-br from-mahalo-green-dark to-mahalo-green text-white space-y-3 shadow-md">
+      <div class="flex justify-between items-center">
+        <span class="text-[10px] bg-mahalo-accent text-mahalo-text font-bold px-2 py-0.5 rounded-full">細胞から潤う髪＆目元ケア</span>
+        <a href="https://www.hair-mahalo.com/mahalo-1f" target="_blank" rel="noopener noreferrer" class="text-[10px] underline text-mahalo-sand hover:text-white">
+          詳細を見る ↗
+        </a>
+      </div>
+
+      <h2 class="font-serif font-bold text-base text-white">遠赤外線 × 煌水（キラ水）</h2>
+      <p class="text-xs text-white/90 leading-relaxed">
+        テラヘルツ波を放つ「煌水」を採用し、毛髪の水分量とタンパク質を復元。2階美容室MAHALOのキラ水ヘッドスパと同時施術も可能です。
+      </p>
+
+      <!-- Kirasui Image (image_5.png) -->
+      <div class="rounded-xl overflow-hidden border border-white/20 mt-2 bg-black/20">
+        <img src="https://momowari.github.io/Eyes-MAHALO/image_5.png" alt="遠赤キラ水ヘッドスパ・施術風景" class="w-full h-auto object-cover block">
+      </div>
+    </section>
+
+    <section class="p-5 bg-white border-b border-mahalo-sand/30">
+      <div class="text-center mb-4">
+        <span class="text-[10px] font-bold text-mahalo-accent uppercase tracking-widest bg-mahalo-sand-light px-2.5 py-0.5 rounded-full">STYLIST</span>
+        <h2 class="text-base font-serif font-bold text-mahalo-green mt-1">アイリスト紹介</h2>
+      </div>
+
+      <div class="bg-mahalo-bg p-4 rounded-2xl border border-mahalo-sand/50 text-center space-y-3">
+        <!-- Profile Image (image_3.png) -->
+        <div class="rounded-xl overflow-hidden border border-mahalo-sand shadow-sm max-w-[260px] mx-auto bg-white">
+          <img src="https://momowari.github.io/Eyes-MAHALO/image_3.png" alt="中岡有里さんとご家族・看板猫" class="w-full h-auto object-cover block">
+        </div>
+
+        <div>
+          <span class="text-[11px] text-mahalo-muted font-medium block">まつげパーマ歴15年以上</span>
+          <h3 class="text-base font-serif font-bold text-mahalo-green">中岡 有里 <span class="text-xs font-sans font-normal text-mahalo-muted">(Nakaoka Yuri)</span></h3>
+        </div>
+
+        <p class="text-xs text-mahalo-text leading-relaxed text-left bg-white p-3.5 rounded-xl border border-mahalo-sand/30 shadow-xs">
+          短い、細い、硬い、左右差があるなど、さまざまなまつげを見ながら、その人に合うカールを考えることを大切にしています。<br><br>
+          「まつげを育てながら、きれいを楽しむ」最高のパーマライフをお手伝いいたします。
+        </p>
+      </div>
+    </section>
+
+    <section class="p-5 bg-mahalo-bg border-b border-mahalo-sand/30 space-y-3">
+      <div class="bg-white p-4 rounded-xl border border-mahalo-sand/50 space-y-2">
+        <h3 class="font-bold text-xs text-mahalo-green flex items-center gap-1.5">
+          <span>👩‍👧</span> 親子・友人とのペア施術＆ご相談OK
+        </h3>
+        <p class="text-xs text-mahalo-muted leading-relaxed">
+          小学生や中学生のお子様の逆さまつげ・ビューラーによるダメージのご相談もお気軽に。親子やお友達同士でのご来店も歓迎しております。
+        </p>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl border border-mahalo-sand/50 space-y-2">
+        <h3 class="font-bold text-xs text-mahalo-green flex items-center gap-1.5">
+          <span>⏰</span> 営業時間外（朝・夜・月曜日）のご予約
+        </h3>
+        <p class="text-xs text-mahalo-muted leading-relaxed">
+          当店は予約時間のみ営業しております。朝早い時間や夜遅く、月曜日の施術希望もLINEよりお気軽にご相談ください。
+        </p>
+      </div>
+    </section>
+
+    <section class="p-5 bg-white border-b border-mahalo-sand/30 space-y-3">
+      <div class="text-center">
+        <span class="text-[10px] font-bold text-mahalo-accent uppercase tracking-widest bg-mahalo-sand-light px-2.5 py-0.5 rounded-full">REVIEWS</span>
+        <h2 class="text-base font-serif font-bold text-mahalo-green mt-1">お客様からの口コミ（ミニモ抜粋）</h2>
+        <a href="https://minimodel.jp/r/bX3Ad2U/review" target="_blank" rel="noopener noreferrer" class="text-[10px] text-mahalo-muted underline mt-0.5 inline-block">
+          ミニモの全口コミを見る ↗
+        </a>
+      </div>
+
+      <div class="space-y-2.5 text-xs">
+        <div class="bg-mahalo-bg p-3 rounded-xl border border-mahalo-sand/40 space-y-1">
+          <div class="flex text-amber-400 text-[10px]">★★★★★</div>
+          <p class="text-mahalo-text leading-relaxed">「施術後10日経っても綺麗に上がったままです！相談にも優しく乗ってくださり大満足です。」</p>
+        </div>
+
+        <div class="bg-mahalo-bg p-3 rounded-xl border border-mahalo-sand/40 space-y-1">
+          <div class="flex text-amber-400 text-[10px]">★★★★★</div>
+          <p class="text-mahalo-text leading-relaxed">「とても綺麗に迅速に仕上げてくださいました。根本からグイッと上がって目元が明るくなりました。」</p>
+        </div>
+
+        <div class="bg-mahalo-bg p-3 rounded-xl border border-mahalo-sand/40 space-y-1">
+          <div class="flex text-amber-400 text-[10px]">★★★★★</div>
+          <p class="text-mahalo-text leading-relaxed">「まつ毛の状態も細かく教えてくださり、自分に合ったカールを提案してもらえて安心できました。」</p>
+        </div>
+
+        <div class="bg-mahalo-bg p-3 rounded-xl border border-mahalo-sand/40 space-y-1">
+          <div class="flex text-amber-400 text-[10px]">★★★★★</div>
+          <p class="text-mahalo-text leading-relaxed">「松山に引っ越してきてサロンを探していましたが、ここに出会えて良かったです！これからも通います。」</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-5 bg-mahalo-bg border-b border-mahalo-sand/30 space-y-3">
+      <div class="text-center mb-2">
+        <span class="text-[10px] font-bold text-mahalo-accent uppercase tracking-widest bg-white px-2.5 py-0.5 rounded-full border border-mahalo-sand/40">FAQ</span>
+        <h2 class="text-base font-serif font-bold text-mahalo-green mt-1">よくあるご質問</h2>
+      </div>
+
+      <div class="space-y-2 text-xs">
+        <details class="bg-white p-3 rounded-xl border border-mahalo-sand/40 group">
+          <summary class="font-bold text-mahalo-green cursor-pointer flex justify-between items-center">
+            <span>Q. 短いまつげでもかかりますか？</span>
+            <span class="text-mahalo-accent transition group-open:rotate-180">▼</span>
+          </summary>
+          <p class="mt-2 text-mahalo-muted leading-relaxed pl-2 border-l-2 border-mahalo-accent">
+            はい！短いまつげ専用のロッドを用意しておりますので、根元から綺麗に立ち上げることができます。
+          </p>
+        </details>
+
+        <details class="bg-white p-3 rounded-xl border border-mahalo-sand/40 group">
+          <summary class="font-bold text-mahalo-green cursor-pointer flex justify-between items-center">
+            <span>Q. 左右で生え癖や長さが違うのですが？</span>
+            <span class="text-mahalo-accent transition group-open:rotate-180">▼</span>
+          </summary>
+          <p class="mt-2 text-mahalo-muted leading-relaxed pl-2 border-l-2 border-mahalo-accent">
+            左右でロッドのサイズや巻き方を変えることで、左右対称の美しいバランスに仕上げます。
+          </p>
+        </details>
+
+        <details class="bg-white p-3 rounded-xl border border-mahalo-sand/40 group">
+          <summary class="font-bold text-mahalo-green cursor-pointer flex justify-between items-center">
+            <span>Q. 根元パーマ（3,000円）とは？</span>
+            <span class="text-mahalo-accent transition group-open:rotate-180">▼</span>
+          </summary>
+          <p class="mt-2 text-mahalo-muted leading-relaxed pl-2 border-l-2 border-mahalo-accent">
+            3週間以内に伸びてきた根元のみを整えるメンテナンスメニューです。ダメージを抑えて通いやすい価格でご提供しています。
+          </p>
+        </details>
+
+        <details class="bg-white p-3 rounded-xl border border-mahalo-sand/40 group">
+          <summary class="font-bold text-mahalo-green cursor-pointer flex justify-between items-center">
+            <span>Q. 月曜日や早朝・夜の予約は可能ですか？</span>
+            <span class="text-mahalo-accent transition group-open:rotate-180">▼</span>
+          </summary>
+          <p class="mt-2 text-mahalo-muted leading-relaxed pl-2 border-l-2 border-mahalo-accent">
+            はい、LINEよりご連絡いただければ営業時間外でのご予約も柔軟に調整させていただきます。
+          </p>
+        </details>
+
+        <details class="bg-white p-3 rounded-xl border border-mahalo-sand/40 group">
+          <summary class="font-bold text-mahalo-green cursor-pointer flex justify-between items-center">
+            <span>Q. 子ども連れでの来店は大丈夫ですか？</span>
+            <span class="text-mahalo-accent transition group-open:rotate-180">▼</span>
+          </summary>
+          <p class="mt-2 text-mahalo-muted leading-relaxed pl-2 border-l-2 border-mahalo-accent">
+            大歓迎です！お子様と一緒にご来店いただける環境を整えております。
+          </p>
+        </details>
+
+        <details class="bg-white p-3 rounded-xl border border-mahalo-sand/40 group">
+          <summary class="font-bold text-mahalo-green cursor-pointer flex justify-between items-center">
+            <span>Q. 施術時間はどれくらいですか？</span>
+            <span class="text-mahalo-accent transition group-open:rotate-180">▼</span>
+          </summary>
+          <p class="mt-2 text-mahalo-muted leading-relaxed pl-2 border-l-2 border-mahalo-accent">
+            カウンセリングを含めて約60分前後となります。
+          </p>
+        </details>
+
+        <details class="bg-white p-3 rounded-xl border border-mahalo-sand/40 group">
+          <summary class="font-bold text-mahalo-green cursor-pointer flex justify-between items-center">
+            <span>Q. 駐車場はありますか？</span>
+            <span class="text-mahalo-accent transition group-open:rotate-180">▼</span>
+          </summary>
+          <p class="mt-2 text-mahalo-muted leading-relaxed pl-2 border-l-2 border-mahalo-accent">
+            敷地内に専用駐車場をご用意しております。古町駅・フジグラン松山からも徒歩3分です。
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <section class="p-5 bg-white border-b border-mahalo-sand/30 space-y-3">
+      <div class="text-center">
+        <span class="text-[10px] font-bold text-mahalo-accent uppercase tracking-widest bg-mahalo-sand-light px-2.5 py-0.5 rounded-full">ACCESS</span>
+        <h2 class="text-base font-serif font-bold text-mahalo-green mt-1">アクセス・店舗情報</h2>
+      </div>
+
+      <!-- MAHALO Exterior Staircase Image (image_4.png) -->
+      <div class="rounded-xl overflow-hidden border border-mahalo-sand shadow-xs mb-3 bg-white">
+        <img src="https://momowari.github.io/Eyes-MAHALO/image_4.png" alt="MAHALO 階段・外観" class="w-full h-auto object-cover block">
+      </div>
+
+      <div class="bg-mahalo-bg p-3.5 rounded-xl border border-mahalo-sand/40 space-y-2 text-xs">
+        <div class="flex justify-between border-b border-mahalo-sand/30 pb-1.5">
+          <span class="font-bold text-mahalo-green">店名</span>
+          <span>Eyes MAHALO (アイズマハロ)</span>
+        </div>
+        <div class="flex justify-between border-b border-mahalo-sand/30 pb-1.5">
+          <span class="font-bold text-mahalo-green">住所</span>
+          <span class="text-right">〒790-0821<br>愛媛県松山市味酒町3-2-29 1F</span>
+        </div>
+        <div class="flex justify-between border-b border-mahalo-sand/30 pb-2">
+          <span class="font-bold text-mahalo-green">アクセス</span>
+          <span class="text-right">古町駅 徒歩3分<br>フジグラン松山 徒歩3分</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="font-bold text-mahalo-green">駐車場</span>
+          <span>専用駐車場あり</span>
+        </div>
+      </div>
+
+      <a href="https://maps.google.com/?q=Eyes+MAHALO+松山市味酒町3-2-29" target="_blank" rel="noopener noreferrer" class="block w-full bg-mahalo-green text-white font-bold text-xs py-3 rounded-xl text-center shadow-md hover:bg-mahalo-green-dark transition">
+        📍 Google Maps で地図を開く ↗
+      </a>
+    </section>
+
+    <section class="p-5 bg-mahalo-bg border-b border-mahalo-sand/30 space-y-3">
+      <div class="text-center">
+        <span class="text-[10px] font-bold text-mahalo-accent uppercase tracking-widest bg-white px-2.5 py-0.5 rounded-full border border-mahalo-sand/40">SALON</span>
+        <h2 class="text-base font-serif font-bold text-mahalo-green mt-1">美容室MAHALOのご案内</h2>
+        <p class="text-[11px] text-mahalo-muted mt-0.5">美容室MAHALOの中にある、まつげパーマ専門スペースです</p>
+      </div>
+
+      <div class="grid grid-cols-2 gap-2 my-2">
+        <!-- Building Entrance (image_6.png) -->
+        <div class="rounded-xl overflow-hidden border border-mahalo-sand/50 shadow-xs bg-white">
+          <img src="https://momowari.github.io/Eyes-MAHALO/image_6.png" alt="MAHALO 入り口" class="w-full h-auto object-cover block">
+        </div>
+        <!-- Flyer / Total Beauty (image_7.png) -->
+        <div class="rounded-xl overflow-hidden border border-mahalo-sand/50 shadow-xs bg-white">
+          <img src="https://momowari.github.io/Eyes-MAHALO/image_7.png" alt="1F/2F 店舗案内チラシ" class="w-full h-auto object-cover block">
+        </div>
+      </div>
+
+      <!-- Building Full Exterior (image_2.png) -->
+      <div class="rounded-xl overflow-hidden border border-mahalo-sand/50 shadow-xs bg-white my-2">
+        <img src="https://momowari.github.io/Eyes-MAHALO/image_2.png" alt="MAHALO 外観全体" class="w-full h-auto object-cover block">
+      </div>
+
+      <a href="https://www.hair-mahalo.com/" target="_blank" rel="noopener noreferrer" class="block w-full text-center border border-mahalo-green text-mahalo-green font-bold text-xs py-3 rounded-xl bg-white hover:bg-mahalo-green-light transition shadow-xs">
+        🌐 MAHALO 公式Webサイトを見る ↗
+      </a>
+    </section>
+
+    <section class="p-6 bg-gradient-to-b from-mahalo-sand-light via-mahalo-green-light to-white text-center space-y-3">
+      <div class="space-y-1">
+        <span class="text-xs font-serif font-bold text-mahalo-green">どんなまつげも、あきらめない。</span>
+        <h2 class="text-xl font-serif font-bold text-mahalo-green">Eyes MAHALO</h2>
+        <p class="text-xs text-mahalo-muted">まつげパーマ 4,000円 ｜ 根元パーマ 3,000円</p>
+      </div>
+
+      <a href="https://lin.ee/q8vBvt1" target="_blank" rel="noopener noreferrer" class="block w-full bg-mahalo-line hover:bg-mahalo-line-dark text-white font-bold py-4 rounded-xl shadow-floating text-center text-sm transition transform active:scale-98">
+        💚 LINEで予約・ご相談する（無料）
+      </a>
+      
+      <p class="text-[10px] text-mahalo-muted">※朝・夜・月曜日のご予約もLINEよりお気軽にご相談ください</p>
+    </section>
+
+    <footer class="bg-mahalo-green-dark text-white/70 text-[10px] text-center py-5 px-4 space-y-2">
+      <div class="flex justify-center gap-3 text-xs font-medium text-white/90">
+        <a href="https://www.hair-mahalo.com/" target="_blank" rel="noopener noreferrer" class="hover:underline">MAHALO公式</a>
+        <span>・</span>
+        <a href="https://minimodel.jp/r/bX3Ad2U/review" target="_blank" rel="noopener noreferrer" class="hover:underline">ミニモ口コミ</a>
+      </div>
+      <p>© Eyes MAHALO. All Rights Reserved.</p>
+    </footer>
+
+    <div class="fixed bottom-0 left-0 right-0 z-50 p-2.5 bg-white/95 backdrop-blur-md border-t border-mahalo-sand/60 max-w-[430px] mx-auto">
+      <a href="https://lin.ee/q8vBvt1" target="_blank" rel="noopener noreferrer" class="w-full bg-mahalo-line hover:bg-mahalo-line-dark text-white font-bold py-3 px-4 rounded-xl shadow-lg flex items-center justify-center gap-2 text-xs transition transform active:scale-95">
+        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 5.86 2 10.63c0 2.92 1.63 5.48 4.14 7.04-.18.66-.66 2.39-.76 2.76-.12.46.17.45.36.33.15-.1 2.36-1.57 3.31-2.22.63.09 1.28.14 1.95.14 5.52 0 10-3.86 10-8.63S17.52 2 12 2z"/></svg>
+        <span>💚 LINEで予約・問い合わせをする</span>
+      </a>
+    </div>
+
+  </div>
+
+</body>
+</html>
