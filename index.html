@@ -1,235 +1,238 @@
 <!DOCTYPE html>
-<html lang="ja" class="scroll-smooth">
+<html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eyes MAHALO ｜ 松山市味酒町のまつげパーマ専門店</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;700&family=Zen+Kaku Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            mahalo: {
-              bg: '#FAF8F5',
-              card: '#FFFFFF',
-              green: '#2D5A43',
-              'green-dark': '#1C3A2B',
-              'green-light': '#EBF3EE',
-              sand: '#E2D9C8',
-              'sand-light': '#F6F3EC',
-              accent: '#C8A86B',
-              text: '#38322E',
-              muted: '#736B65',
-              line: '#06C755',
-              'line-dark': '#05b04b',
-            }
-          },
-          fontFamily: {
-            serif: ['"Shippori Mincho"', 'serif'],
-            sans: ['"Zen Kaku Gothic New"', 'sans-serif'],
-          }
-        }
-      }
-    }
-  </script>
-  <style>
-    body {
-      background-color: #ede9e1;
-      color: #38322E;
-      font-family: 'Zen Kaku Gothic New', sans-serif;
-      -webkit-tap-highlight-color: transparent;
-    }
-    .shadow-soft {
-      box-shadow: 0 8px 25px -4px rgba(45, 90, 67, 0.08);
-    }
-    .shadow-floating {
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    }
-    .keep-all {
-      word-break: keep-all;
-      overflow-wrap: break-word;
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>松山のまつげパーマ専門店 Eyes MAHALO｜味酒町・古町駅徒歩3分</title>
+<meta name="description" content="愛媛県松山市味酒町のまつげパーマ専門店。施術歴15年以上の中岡有里が、短い・細い・硬い・左右差など毛質に合わせてカールを設計。遠赤外線まつげパーマ4,000円、根元パーマ3,000円。完全予約制、LINEで相談できます。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BeautySalon","name":"Eyes MAHALO","description":"松山市味酒町のまつげパーマ専門店。遠赤外線まつげパーマ、根元パーマ。完全予約制。","url":"https://momowari.github.io/Eyes-MAHALO/","sameAs":["https://www.hair-mahalo.com/mahalo-1f"],"address":{"@type":"PostalAddress","postalCode":"790-0814","addressRegion":"愛媛県","addressLocality":"松山市","streetAddress":"味酒町3-2-29 MAHALOビル1F","addressCountry":"JP"},"hasMap":"https://maps.google.com/?q=Eyes+MAHALO+松山市味酒町3-2-29","priceRange":"¥3,000〜¥4,000","employee":{"@type":"Person","name":"中岡有里","jobTitle":"アイリスト"}}
+</script>
+<style>
+:root{--ink:#1d3a33;--leaf:#2f6b5a;--mist:#e8f1ed;--paper:#fbfdfc;--pink:#f1b9c2;--gold:#b8923e;--line:#06c755;--text:#2a3a35;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--paper);color:var(--text);font:400 15px/1.95 "Zen Kaku Gothic New","Hiragino Sans","Yu Gothic",sans-serif;-webkit-font-smoothing:antialiased;line-break:strict;text-wrap:pretty}
+h1,h2,h3{font-family:"Shippori Mincho B1","Hiragino Mincho ProN","Yu Mincho",serif;color:var(--ink);line-height:1.55;margin:0;text-wrap:balance}
+.k{display:inline-block}
+img{max-width:100%;display:block}
+a{color:inherit}
+p{margin:0 0 12px}
+.w{max-width:900px;margin:0 auto;padding:0 20px}
+section{padding:60px 0}
+h2{font-size:clamp(21px,5.6vw,29px);margin-bottom:22px}
+.sub{color:var(--leaf);font-size:13px;margin-bottom:6px;letter-spacing:.08em}
+.btn{display:inline-block;background:var(--line);color:#fff;font-weight:700;text-decoration:none;padding:14px 26px;border-radius:999px;box-shadow:0 8px 20px -8px rgba(6,199,85,.6);transition:transform .2s}
+.btn:hover,.btn:focus-visible{transform:translateY(-2px)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+/* hero slider */
+.hero{position:relative;height:min(86svh,720px);min-height:460px;background:var(--ink);overflow:hidden;color:#fff}
+.slide{position:absolute;inset:0;opacity:0;transition:opacity 1.4s ease}
+.slide.on{opacity:1}
+.slide img{width:100%;height:100%;object-fit:cover}
+.slide.on img{animation:zoom 7s linear forwards}
+@keyframes zoom{from{transform:scale(1)}to{transform:scale(1.09)}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,32,27,.15) 30%,rgba(14,32,27,.82));pointer-events:none}
+.hc{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:0 22px calc(34px + env(safe-area-inset-bottom,0px))}
+.hc small{display:block;font-size:12px;letter-spacing:.1em;margin-bottom:8px;opacity:.9}
+.hc h1{color:#fff;font-size:clamp(25px,7.6vw,46px);text-shadow:0 2px 18px rgba(0,0,0,.35);margin-bottom:10px}
+.hc p{font-size:14px;margin-bottom:18px}
+.dots{position:absolute;right:18px;top:calc(18px + env(safe-area-inset-top,0px));z-index:3;display:flex;gap:8px}
+.dots button{width:26px;height:26px;border:0;background:none;padding:0;cursor:pointer;position:relative}
+.dots button::after{content:"";position:absolute;left:3px;right:3px;top:11px;height:3px;border-radius:2px;background:rgba(255,255,255,.5)}
+.dots button[aria-current=true]::after{background:var(--pink)}
+/* common blocks */
+.cards{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{background:var(--mist);padding:20px;border-radius:4px 22px 4px 22px}
+.card h3{font-size:18px;margin-bottom:8px}
+.card p{margin:0;font-size:14.5px}
+.menu{background:var(--ink);color:#e9f2ee}
+.menu h2{color:#fff}
+.row{display:flex;justify-content:space-between;align-items:baseline;gap:6px 16px;border-bottom:1px solid rgba(255,255,255,.25);padding:16px 0;flex-wrap:wrap}
+.row b{font:700 19px "Shippori Mincho B1",serif}
+.row span{font:700 25px "Shippori Mincho B1",serif;color:var(--pink)}
+.row em{flex-basis:100%;font-style:normal;font-size:13.5px;opacity:.85}
+.steps{list-style:none;margin:0;padding:0;counter-reset:s}
+.steps li{counter-increment:s;position:relative;padding:0 0 22px 52px;border-left:2px dotted var(--leaf);margin-left:16px}
+.steps li::before{content:counter(s);position:absolute;left:-17px;top:-2px;width:32px;height:32px;border-radius:50%;background:var(--ink);color:#fff;text-align:center;line-height:32px;font-weight:700}
+.steps li:last-child{border-color:transparent;padding-bottom:0}
+.steps b{display:block;color:var(--ink)}
+.who{display:grid;gap:26px;grid-template-columns:minmax(0,280px) 1fr;align-items:center}
+.who img,.flyer img{width:100%;object-fit:cover;background:var(--mist)}
+.who img{aspect-ratio:4/5;border-radius:50% 50% 14px 14px}
+.msg{font:700 17px/1.9 "Shippori Mincho B1",serif;color:var(--leaf);border-left:3px solid var(--pink);padding-left:14px;margin:18px 0 0}
+@media(max-width:640px){.who{grid-template-columns:1fr}.who img{max-width:240px;margin:0 auto}}
+.tint{background:var(--mist)}
+.tint .card{background:var(--paper)}
+details{border-bottom:1px solid #cfe0d9;padding:15px 0}
+summary{cursor:pointer;font-weight:700;color:var(--ink);list-style:none;padding-right:28px;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:4px;transition:transform .25s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{margin:10px 0 0;font-size:14.5px}
+dl{display:grid;grid-template-columns:5.5em 1fr;gap:10px 12px;margin:0 0 22px}
+dt{font-weight:700;color:var(--leaf)}dd{margin:0}
+.flyer{text-align:center}
+.flyer img{border-radius:14px;max-width:400px;margin:0 auto 14px;height:auto}
+footer{text-align:center;font-size:12.5px;padding:28px 0 100px;color:#5b6d66}
+.sticky{position:fixed;left:0;right:0;bottom:0;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:rgba(251,253,252,.93);backdrop-filter:blur(8px);text-align:center;z-index:9}
+.sticky .btn{width:100%;max-width:420px}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--paper:#142521;--mist:#1c3830;--text:#dcebe5;--ink:#e9f4ef}.menu{background:#0d1a17}.sticky{background:rgba(20,37,33,.93)}.steps li::before{background:var(--leaf)}}
+@media(prefers-reduced-motion:reduce){.slide{transition:none}.slide.on img{animation:none}html{scroll-behavior:auto}.btn{transition:none}}
+</style>
 </head>
-<body class="antialiased selection:bg-mahalo-green-light selection:text-mahalo-green">
-
-  <div class="max-w-[430px] mx-auto bg-mahalo-bg min-h-screen relative shadow-2xl overflow-hidden pb-24 border-x border-mahalo-sand/60">
-
-    <!-- ヘッダー -->
-    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-mahalo-sand/50 px-4 py-2.5 flex justify-between items-center shadow-sm">
-      <div class="flex items-center gap-2">
-        <div class="w-8 h-8 rounded-full bg-mahalo-green-light flex items-center justify-center text-mahalo-green border border-mahalo-green/20 shrink-0">
-          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
-            <path d="M12,2 C12,2 14.5,7 19.5,9.5 C19.5,9.5 14.5,12 12,17 C12,17 9.5,12 4.5,9.5 C4.5,9.5 9.5,7 12,2 Z" opacity="0.8"/>
-            <path d="M12,7 C12,7 13.5,10 16.5,11.5 C16.5,11.5 13.5,13 12,16 C12,16 10.5,13 7.5,11.5 C7.5,11.5 10.5,10 12,7 Z" fill="#C8A86B"/>
-          </svg>
-        </div>
-        <div>
-          <span class="block text-xs font-serif font-bold text-mahalo-green tracking-wider leading-none">Eyes MAHALO</span>
-          <span class="text-[9px] text-mahalo-muted font-medium tracking-tight">松山市味酒町 ｜ まつげパーマ専門店</span>
-        </div>
-      </div>
-      <a href="https://lin.ee/q8vBvt1" target="_blank" rel="noopener noreferrer" class="bg-mahalo-line hover:bg-mahalo-line-dark text-white text-xs font-bold px-3 py-1.5 rounded-full flex items-center gap-1 shadow-md transition transform active:scale-95">
-        <span>💚 LINE予約</span>
-      </a>
-    </header>
-
-    <!-- メインビジュアル（アイキャッチ） -->
-    <section class="relative bg-gradient-to-b from-mahalo-sand-light via-mahalo-bg to-white pt-6 pb-6 px-4 text-center border-b border-mahalo-sand/40">
-      
-      <div class="inline-flex items-center gap-1.5 bg-mahalo-green-light text-mahalo-green text-[11px] font-bold px-3 py-0.5 rounded-full mb-3 border border-mahalo-green/20">
-        <span class="w-1.5 h-1.5 rounded-full bg-mahalo-green"></span>
-        <span>松山市・味酒町 ｜ まつげパーマ専門店</span>
-      </div>
-
-      <h1 class="text-2xl font-serif font-bold text-mahalo-green mb-2 tracking-wide">
-        Eyes MAHALO
-      </h1>
-
-      <!-- チラシ上部の外観・施術融合表示（100%表示保証） -->
-      <div class="rounded-2xl overflow-hidden shadow-soft border border-mahalo-sand/60 mb-4 bg-white relative">
-        <img src="image_8.png" alt="MAHALO外観・案内" class="w-full h-48 object-cover block" style="object-position: center top;" onerror="this.onerror=null; this.src='image_8.png';">
-      </div>
-
-      <!-- キャッチコピー -->
-      <div class="my-4 space-y-2 bg-white/80 p-4 rounded-2xl border border-mahalo-sand/50 shadow-soft">
-        <p class="text-lg font-serif font-bold text-mahalo-green tracking-tight leading-snug">
-          <span class="inline-block">どんなまつげも、</span><span class="inline-block">あきらめない。</span>
-        </p>
-        <p class="text-xs text-mahalo-text leading-relaxed font-medium">
-          <span class="inline-block">毛質や目元に合わせた</span><span class="inline-block">オーダーメイドカール。</span><br>
-          <span class="font-bold text-mahalo-green text-sm underline decoration-mahalo-accent decoration-2 inline-block mt-1">最高のパーマライフを。</span>
-        </p>
-      </div>
-
-      <!-- 価格表 -->
-      <div class="bg-white rounded-2xl p-3.5 border border-mahalo-sand/70 shadow-soft my-4 text-xs text-mahalo-text space-y-2.5">
-        <div class="grid grid-cols-2 gap-2 text-center">
-          <div class="bg-mahalo-sand-light/70 p-2.5 rounded-xl border border-mahalo-sand/40">
-            <span class="text-[10px] text-mahalo-muted block font-medium">まつげパーマ</span>
-            <span class="text-base font-bold text-mahalo-green">4,000円 <span class="text-[9px] text-mahalo-muted font-normal">(税込)</span></span>
-          </div>
-          <div class="bg-mahalo-sand-light/70 p-2.5 rounded-xl border border-mahalo-sand/40">
-            <span class="text-[10px] text-mahalo-muted block font-medium">根元パーマ<span class="text-[9px] text-mahalo-accent block">(メンテナンス)</span></span>
-            <span class="text-base font-bold text-mahalo-green">3,000円 <span class="text-[9px] text-mahalo-muted font-normal">(税込)</span></span>
-          </div>
-        </div>
-
-        <div class="flex justify-around items-center text-[10px] font-medium text-mahalo-muted pt-2 border-t border-mahalo-sand/40">
-          <span>歴15年以上 ｜ 中岡有里</span>
-          <span class="text-mahalo-sand">|</span>
-          <span>遠赤外線 × 煌水</span>
-        </div>
-      </div>
-
-      <!-- LINE CTA ボタン -->
-      <a href="https://lin.ee/q8vBvt1" target="_blank" rel="noopener noreferrer" class="w-full bg-mahalo-line hover:bg-mahalo-line-dark text-white font-bold py-3.5 px-4 rounded-xl shadow-md flex items-center justify-center gap-2 transition transform active:scale-98">
-        <span class="text-sm">💚 LINEで予約・ご相談（無料）</span>
-      </a>
-    </section>
-
-    <!-- お悩み相談セクション -->
-    <section class="p-5 bg-white border-b border-mahalo-sand/30">
-      <div class="text-center mb-4">
-        <span class="text-[10px] font-bold text-mahalo-accent uppercase tracking-widest bg-mahalo-sand-light px-2.5 py-0.5 rounded-full">CONCEPT</span>
-        <h2 class="text-base font-serif font-bold text-mahalo-green mt-1">こんなまつげの悩み、ありませんか？</h2>
-      </div>
-
-      <div class="grid grid-cols-2 gap-2 text-xs mb-4">
-        <div class="bg-mahalo-bg p-2.5 rounded-xl border border-mahalo-sand/40 flex items-center gap-1.5">
-          <span class="text-mahalo-accent font-bold">✔</span>
-          <span>短い・細い・硬い</span>
-        </div>
-        <div class="bg-mahalo-bg p-2.5 rounded-xl border border-mahalo-sand/40 flex items-center gap-1.5">
-          <span class="text-mahalo-accent font-bold">✔</span>
-          <span>左右差がある</span>
-        </div>
-        <div class="bg-mahalo-bg p-2.5 rounded-xl border border-mahalo-sand/40 flex items-center gap-1.5">
-          <span class="text-mahalo-accent font-bold">✔</span>
-          <span>上がりにくい・落ちる</span>
-        </div>
-        <div class="bg-mahalo-bg p-2.5 rounded-xl border border-mahalo-sand/40 flex items-center gap-1.5">
-          <span class="text-mahalo-accent font-bold">✔</span>
-          <span>毎日ビューラー使用</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- アイリスト紹介 -->
-    <section class="p-5 bg-white border-b border-mahalo-sand/30">
-      <div class="text-center mb-4">
-        <span class="text-[10px] font-bold text-mahalo-accent uppercase tracking-widest bg-mahalo-sand-light px-2.5 py-0.5 rounded-full">STYLIST</span>
-        <h2 class="text-base font-serif font-bold text-mahalo-green mt-1">アイリスト紹介</h2>
-      </div>
-
-      <div class="bg-mahalo-bg p-4 rounded-2xl border border-mahalo-sand/50 text-center space-y-3">
-        <!-- SVGで確実に表示されるスタイリストグラフィック -->
-        <div class="w-24 h-24 mx-auto rounded-full bg-mahalo-sand-light border-2 border-mahalo-accent flex items-center justify-center overflow-hidden shadow-sm">
-          <svg class="w-16 h-16 text-mahalo-green" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-          </svg>
-        </div>
-
-        <div>
-          <span class="text-[11px] text-mahalo-muted font-medium block">まつげパーマ歴15年以上</span>
-          <h3 class="text-base font-serif font-bold text-mahalo-green">中岡 有里 <span class="text-xs font-sans font-normal text-mahalo-muted">(Nakaoka Yuri)</span></h3>
-        </div>
-
-        <p class="text-xs text-mahalo-text leading-relaxed text-left bg-white p-3.5 rounded-xl border border-mahalo-sand/30 shadow-xs">
-          短い、細い、硬い、左右差があるなど、さまざまなまつげを見ながら、その人に合うカールを考えることを大切にしています。<br><br>
-          「まつげを育てながら、きれいを楽しむ」最高のパーマライフをお手伝いいたします。
-        </p>
-      </div>
-    </section>
-
-    <!-- 店舗案内 ＆ アクセス -->
-    <section class="p-5 bg-white border-b border-mahalo-sand/30 space-y-3">
-      <div class="text-center">
-        <span class="text-[10px] font-bold text-mahalo-accent uppercase tracking-widest bg-mahalo-sand-light px-2.5 py-0.5 rounded-full">ACCESS</span>
-        <h2 class="text-base font-serif font-bold text-mahalo-green mt-1">アクセス・店舗情報</h2>
-      </div>
-
-      <div class="bg-mahalo-bg p-3.5 rounded-xl border border-mahalo-sand/40 space-y-2 text-xs">
-        <div class="flex justify-between border-b border-mahalo-sand/30 pb-1.5">
-          <span class="font-bold text-mahalo-green">店名</span>
-          <span>Eyes MAHALO (アイズマハロ)</span>
-        </div>
-        <div class="flex justify-between border-b border-mahalo-sand/30 pb-1.5">
-          <span class="font-bold text-mahalo-green">住所</span>
-          <span class="text-right">〒790-0814<br>愛媛県松山市味酒町3-2-29 1F</span>
-        </div>
-        <div class="flex justify-between border-b border-mahalo-sand/30 pb-2">
-          <span class="font-bold text-mahalo-green">アクセス</span>
-          <span class="text-right">古町駅 徒歩3分 / フジグラン松山 徒歩3分</span>
-        </div>
-        <div class="flex justify-between">
-          <span class="font-bold text-mahalo-green">営業時間</span>
-          <span>9:00〜18:00（要予約）</span>
-        </div>
-      </div>
-
-      <a href="https://maps.google.com/?q=Eyes+MAHALO+松山市味酒町3-2-29" target="_blank" rel="noopener noreferrer" class="block w-full bg-mahalo-green text-white font-bold text-xs py-3 rounded-xl text-center shadow-md hover:bg-mahalo-green-dark transition">
-        📍 Google Maps で地図を開く ↗
-      </a>
-    </section>
-
-    <!-- フッター -->
-    <footer class="bg-mahalo-green-dark text-white/70 text-[10px] text-center py-5 px-4 space-y-2">
-      <p>© Eyes MAHALO. All Rights Reserved.</p>
-    </footer>
-
-    <!-- 固定LINEボタン -->
-    <div class="fixed bottom-0 left-0 right-0 z-50 p-2.5 bg-white/95 backdrop-blur-md border-t border-mahalo-sand/60 max-w-[430px] mx-auto">
-      <a href="https://lin.ee/q8vBvt1" target="_blank" rel="noopener noreferrer" class="w-full bg-mahalo-line hover:bg-mahalo-line-dark text-white font-bold py-3 px-4 rounded-xl shadow-lg flex items-center justify-center gap-2 text-xs transition transform active:scale-95">
-        <span>💚 LINEで予約・問い合わせをする</span>
-      </a>
-    </div>
-
+<body>
+<header class="hero" aria-label="Eyes MAHALOの写真">
+  <div class="slide on"><img src="IMG_1284.jpeg" alt="Eyes MAHALOのご案内" onerror="this.remove()"></div>
+  <div class="slide"><img src="IMG_1286.jpeg" alt="まつげパーマの施術の様子" onerror="this.remove()"></div>
+  <div class="slide"><img src="IMG_1288.jpeg" alt="Eyes MAHALOの店内" onerror="this.remove()"></div>
+  <div class="dots" id="dots"></div>
+  <div class="hc">
+    <small>松山市味酒町｜まつげパーマ専門</small>
+    <h1><span class="k">どんなまつげも、</span><span class="k">あきらめない。</span></h1>
+    <p><span class="k">毛質や生え方に合わせた、</span><span class="k">あなただけのカール。</span></p>
+    <a class="btn" href="https://lin.ee/q8vBvt1" target="_blank" rel="noopener">LINEで予約・相談</a>
   </div>
+</header>
 
+<main>
+<section>
+  <div class="w">
+    <p class="sub">まつげパーマとは</p>
+    <h2><span class="k">自まつげを、</span><span class="k">上向きにカールさせる施術です。</span></h2>
+    <p>エクステのように毛をつけ足さず、<br>もともとのまつげを活かします。</p>
+    <p>ビューラーを使う手間が減り、<br>朝の準備がらくになる方もいます。</p>
+    <p>仕上がりやもちには個人差があります。<br>気になることは事前にご相談ください。</p>
+  </div>
+</section>
+
+<section class="tint">
+  <div class="w">
+    <p class="sub">お悩み別のご相談</p>
+    <h2><span class="k">こんなお悩み、</span><span class="k">まずはご相談ください。</span></h2>
+    <div class="cards">
+      <div class="card"><h3>短い・細い・硬い</h3><p>毛のハリやコシは一本ずつ違います。毛質に合わせて、ロッドの種類や大きさを選びます。</p></div>
+      <div class="card"><h3>左右で差がある</h3><p>左右でロッドの大きさや加減を変えて整えます。2回目以降に微調整することもあります。</p></div>
+      <div class="card"><h3>上がりにくい・落ちる</h3><p>生え方や毛の向きを見ながら、カールのつけ方をご提案します。</p></div>
+      <div class="card"><h3>まぶたが重い・奥二重</h3><p>まぶたへの当たりが気になる方、根元から上げたい方も、状態を見ながらご相談ください。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="menu">
+  <div class="w">
+    <p class="sub" style="color:var(--pink)">メニュー</p>
+    <h2>メニューと料金</h2>
+    <div class="row"><b>遠赤外線まつげパーマ</b><span>4,000円</span><em>遠赤外線と煌水（キラ水）を取り入れた施術です。</em></div>
+    <div class="row"><b>根元パーマ</b><span>3,000円</span><em>根元の立ち上がりをととのえたい方に。</em></div>
+    <p style="margin-top:16px;font-size:14px">キラ水ヘッドスパとの同時施術も人気です。<br>メニューの組み合わせはLINEでご相談ください。</p>
+  </div>
+</section>
+
+<section>
+  <div class="w">
+    <p class="sub">こだわり</p>
+    <h2><span class="k">一人ひとりの毛質を、</span><span class="k">見て決めます。</span></h2>
+    <div class="cards">
+      <div class="card"><h3>15年以上の経験</h3><p>まつげパーマ専門で施術を続けてきました。毎回違う毛質を見ながら、そのときのカールを考えます。</p></div>
+      <div class="card"><h3>ロッドの選び方</h3><p>ロッドの種類や大きさで、仕上がりの印象は変わります。ご希望に合わせて選びます。</p></div>
+      <div class="card"><h3>月曜や朝・夕方も</h3><p>お仕事や家事の合間でも通えるよう、月曜日や朝・夕方の時間帯もご相談ください。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="tint">
+  <div class="w">
+    <p class="sub">ご利用の流れ</p>
+    <h2>ご予約から施術まで</h2>
+    <ol class="steps">
+      <li><b>LINEでご予約・ご相談</b>完全予約制です。ご希望の日時をお知らせください。</li>
+      <li><b>まつげの状態を確認</b>毛質や生え方、左右差を見ながらご相談します。</li>
+      <li><b>施術</b>状態に合わせて、ロッドとカールを決めて進めます。</li>
+      <li><b>2回目以降の微調整</b>生え方に合わせて、必要に応じて整えます。</li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <div class="w who">
+    <img src="IMG_4577.jpeg" alt="アイリスト 中岡有里" loading="lazy" onerror="this.remove()">
+    <div>
+      <p class="sub">アイリスト紹介</p>
+      <h2 style="margin-bottom:10px">中岡 有里 <small style="font-size:14px;font-weight:500">Nakaoka Yuri</small></h2>
+      <p>まつげパーマ歴15年以上。</p>
+      <p>短い、細い、硬い、左右差があるなど、<br>さまざまなまつげを見ながら、<br>その人に合うカールを考えます。</p>
+      <p class="msg">まつげを育てながら、<br>きれいを楽しむ。<br>最高のパーマライフを。</p>
+    </div>
+  </div>
+</section>
+
+<section class="tint">
+  <div class="w">
+    <p class="sub">口コミ</p>
+    <h2>お客様の声は、Googleマップで</h2>
+    <p>お客様の口コミは、Googleマップでご覧いただけます。</p>
+    <p><a class="btn" href="https://maps.google.com/?q=Eyes+MAHALO+松山市味酒町3-2-29" target="_blank" rel="noopener">口コミを見る</a></p>
+    <!-- 口コミを載せる場合：お客様の許可を得た文章だけを、ここに <p>…</p> で追加してください -->
+  </div>
+</section>
+
+<section>
+  <div class="w">
+    <p class="sub">よくあるご質問</p>
+    <h2>ご予約の前に</h2>
+    <details><summary>予約はどうすればいいですか？</summary><p>完全予約制です。LINEからご予約・ご相談いただけます。</p></details>
+    <details><summary>月曜日や朝・夕方でも相談できますか？</summary><p>月曜日や朝・夕方の時間帯もご相談ください。ご希望の日時をLINEでお知らせください。</p></details>
+    <details><summary>根元だけ上げてもらえますか？</summary><p>根元パーマ（3,000円）があります。毛の状態を見ながらご提案します。</p></details>
+    <details><summary>まつげに左右差があります。</summary><p>左右でロッドの大きさや加減を調整します。生え方によっては、2回目以降に微調整することもあります。</p></details>
+    <details><summary>一重・奥二重、まぶたが重いのですが。</summary><p>まぶたへの当たりや生え方を見ながら、合うカールを一緒に考えます。仕上がりには個人差があるので、事前にお気軽にご相談ください。</p></details>
+    <details><summary>ヘッドスパと一緒に受けられますか？</summary><p>キラ水ヘッドスパとの同時施術ができます。人気のメニューです。</p></details>
+    <details><summary>まつげエクステとの違いは？</summary><p>まつげパーマは、自まつげにカールをつける施術です。どちらが合うか迷う場合も、お気軽にご相談ください。</p></details>
+  </div>
+</section>
+
+<section class="tint">
+  <div class="w">
+    <p class="sub">アクセス</p>
+    <h2>店舗情報</h2>
+    <dl>
+      <dt>店名</dt><dd>Eyes MAHALO（アイズマハロ）</dd>
+      <dt>住所</dt><dd>〒790-0814<br>愛媛県松山市味酒町3-2-29<br>MAHALOビル1F</dd>
+      <dt>アクセス</dt><dd>古町駅 徒歩3分<br>フジグラン松山 徒歩3分</dd>
+      <dt>営業時間</dt><dd>9:00〜18:00（完全予約制）</dd>
+    </dl>
+    <p><a class="btn" href="https://maps.google.com/?q=Eyes+MAHALO+松山市味酒町3-2-29" target="_blank" rel="noopener">Googleマップで見る</a></p>
+  </div>
+</section>
+
+<section class="flyer">
+  <div class="w">
+    <p class="sub">同じ建物のお店</p>
+    <h2>MAHALOビル</h2>
+    <img src="IMG_0009.jpeg" alt="MAHALOグループのチラシ" loading="lazy" onerror="this.remove()">
+    <p>美容室や雑貨のお店もあります。<br><a href="https://www.hair-mahalo.com/" target="_blank" rel="noopener">MAHALO hair ID salon 公式サイト</a></p>
+  </div>
+</section>
+</main>
+
+<footer>© Eyes MAHALO</footer>
+<div class="sticky"><a class="btn" href="https://lin.ee/q8vBvt1" target="_blank" rel="noopener">LINEで予約・相談</a></div>
+
+<script>
+(function(){
+  var s=[].slice.call(document.querySelectorAll(".slide")),d=document.getElementById("dots"),i=0,t,
+      still=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  s.forEach(function(_,n){var b=document.createElement("button");b.setAttribute("aria-label","写真"+(n+1));b.onclick=function(){go(n);};d.appendChild(b);});
+  function go(n){
+    i=n;s.forEach(function(e,k){e.classList.toggle("on",k===n);});
+    [].forEach.call(d.children,function(b,k){b.setAttribute("aria-current",k===n);});
+    clearInterval(t);if(!still)t=setInterval(function(){go((i+1)%s.length);},5000);
+  }
+  go(0);
+})();
+</script>
 </body>
 </html>
