@@ -578,13 +578,15 @@ document.addEventListener("error",function(e){
     [/キャンセル|変更|遅れ/, "予約の変更やキャンセルは、LINEでご連絡ください。"],
     [/メイク|化粧|すっぴん/, "当日のメイクの可否はまつげの状態で変わります。心配な方はLINEで先にご相談ください。"]
   ];
+  var TOPICS=['料金','持ち・期間','予約・空き','営業時間','場所・アクセス','電話','初めて・不安','上がらない・逆まつげ','パリジェンヌ','ヘッドスパ','根元メニュー','月曜日','ペア・友達と','子連れ','支払い','キャンセル・変更','メイク'];
+  function logChat(topic,kind){if(window.gtag){gtag('event','chat_question',{topic:topic,kind:kind});}}
   function answer(t){
-    for(var i=0;i<RULES.length;i++){if(RULES[i][0].test(t))return RULES[i][1];}
-    return "その内容は、LINEで直接聞いてもらえると正確にお答えできます。料金・持ち・予約方法などの質問なら、ここでも答えられます。";
+    for(var i=0;i<RULES.length;i++){if(RULES[i][0].test(t)){logChat(TOPICS[i],'text');return RULES[i][1];}}
+    logChat('答えられなかった質問','text');return "その内容は、LINEで直接聞いてもらえると正確にお答えできます。料金・持ち・予約方法などの質問なら、ここでも答えられます。";
   }
   function ask(t,preset){t=(t||"").trim();if(!t)return;addQ(t);addA(preset||answer(t));}
   document.getElementById("chatChips").addEventListener("click",function(e){
-    var t=e.target;if(t.tagName!=="BUTTON")return;ask(t.textContent,t.getAttribute("data-a"));
+    var t=e.target;if(t.tagName!=="BUTTON")return;ask(t.textContent,t.getAttribute("data-a"));logChat(t.textContent,'chip');
   });
   document.getElementById("chatForm").addEventListener("submit",function(e){
     e.preventDefault();var i=document.getElementById("chatInput");ask(i.value);i.value="";
