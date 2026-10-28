@@ -270,10 +270,9 @@ h2{font-size:clamp(21px,5.6vw,29px);margin-bottom:20px}
 /* review */
 .rv{border-left:3px solid var(--pink);padding:2px 0 2px 14px;margin:0 0 16px}
 .rv p{margin:0 0 4px}
-.who{display:grid;gap:26px;grid-template-columns:minmax(0,280px) 1fr;align-items:center}
-.who img,.who .miss{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:50% 50% 14px 14px}
+.who{display:grid;gap:22px;grid-template-columns:1fr}
+.who img,.who .miss{width:100%;max-width:250px;margin:0 auto;aspect-ratio:4/5;object-fit:cover;border-radius:50% 50% 14px 14px}
 .msg{font:700 17px/1.9 "Shippori Mincho B1",serif;color:var(--leaf);border-left:3px solid var(--pink);padding-left:14px;margin:16px 0 0}
-@media(max-width:640px){.who{grid-template-columns:1fr}.who>:first-child{max-width:240px;margin:0 auto}}
 details{border-bottom:1px solid #f0d9d0;padding:15px 0}
 summary{cursor:pointer;font-weight:700;color:var(--ink);list-style:none;padding-right:28px;position:relative}
 summary::-webkit-details-marker{display:none}
