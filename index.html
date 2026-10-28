@@ -316,6 +316,16 @@ footer{text-align:center;font-size:12.5px;padding:26px 0 100px;color:#9a8578}
   .sticky{left:calc(50% - 240px);right:calc(50% - 240px)}
 }
 </style>
+<style>
+/* LINE QRモーダル */
+#lineQrModal{position:fixed;inset:0;z-index:100;background:rgba(40,30,20,.55);display:flex;align-items:center;justify-content:center;padding:20px}
+#lineQrModal[hidden]{display:none}
+.lqm-box{background:#fff;border-radius:18px;padding:24px 22px;text-align:center;max-width:320px;width:100%;box-shadow:0 10px 40px rgba(0,0,0,.3)}
+.lqm-title{font-weight:700;font-size:1.05rem;margin:0 0 12px}
+.lqm-box img{width:220px;height:220px}
+.lqm-note{font-size:.85rem;line-height:1.7;margin:12px 0 16px}
+#lineQrClose{background:#06C755;color:#fff;border:none;border-radius:999px;padding:10px 28px;font-size:.95rem;font-weight:700;cursor:pointer}
+</style>
 </head>
 <body>
 <header class="hero" aria-label="Eyes MAHALOの写真">
@@ -599,6 +609,28 @@ document.addEventListener("error",function(e){
   });
   document.getElementById("chatForm").addEventListener("submit",function(e){
     e.preventDefault();var i=document.getElementById("chatInput");ask(i.value);i.value="";
+  });
+})();
+</script>
+
+<div id="lineQrModal" hidden role="dialog" aria-label="LINE QRコード">
+  <div class="lqm-box">
+    <p class="lqm-title">LINEはスマホで開いてください</p>
+    <img src="images/line-qr.png" alt="Eyes MAHALO公式LINEのQRコード">
+    <p class="lqm-note">スマホのカメラで読み取ると公式LINEが開きます。友だち追加のうえ「LPから来ました。まつげパーマの相談・予約をお願いします。」と送ってください。</p>
+    <button id="lineQrClose" type="button">閉じる</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var modal=document.getElementById('lineQrModal');
+  if(!modal)return;
+  document.getElementById('lineQrClose').addEventListener('click',function(){modal.hidden=true;});
+  modal.addEventListener('click',function(e){if(e.target===modal)modal.hidden=true;});
+  document.addEventListener('click',function(e){
+    var a=e.target.closest?e.target.closest('a[href*="oaMessage"]'):null;
+    if(a && window.innerWidth>=520){ e.preventDefault(); modal.hidden=false; }
   });
 })();
 </script>
