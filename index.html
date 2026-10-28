@@ -307,6 +307,15 @@ footer{text-align:center;font-size:12.5px;padding:26px 0 100px;color:#9a8578}
 .chatline{display:block;margin-top:8px;background:var(--line);color:#fff;text-align:center;font-weight:700;text-decoration:none;padding:10px;border-radius:999px}
 @media(prefers-reduced-motion:reduce){.slide{transition:none}.slide.on img{animation:none}html{scroll-behavior:auto}.btn{transition:none}}
 </style>
+<style>
+/* PCはスマホ幅で表示 */
+@media (min-width:520px){
+  html{background:#E7DFD3}
+  body{max-width:480px;margin:0 auto;box-shadow:0 0 24px rgba(90,70,50,.18)}
+  .chatbtn,.chatpanel{right:calc(50% - 224px)}
+  .sticky{left:calc(50% - 240px);right:calc(50% - 240px)}
+}
+</style>
 </head>
 <body>
 <header class="hero" aria-label="Eyes MAHALOの写真">
