@@ -623,6 +623,7 @@ document.addEventListener("error",function(e){
 (function(){
   var b=document.getElementById("chatBtn"),p=document.getElementById("chatPanel"),body=document.getElementById("chatBody");
   b.addEventListener("click",function(){p.classList.toggle("open");});
+  document.addEventListener("click",function(e){ if(p.classList.contains("open") && !p.contains(e.target) && !b.contains(e.target)) p.classList.remove("open"); });
   var LINE="https://line.me/R/oaMessage/@upe4525g/?LP%E3%81%8B%E3%82%89%E6%9D%A5%E3%81%BE%E3%81%97%E3%81%9F%E3%80%82%E3%81%BE%E3%81%A4%E3%81%92%E3%83%91%E3%83%BC%E3%83%9E%E3%81%AE%E7%9B%B8%E8%AB%87%E3%83%BB%E4%BA%88%E7%B4%84%E3%82%92%E3%81%8A%E9%A1%98%E3%81%84%E3%81%97%E3%81%BE%E3%81%99%E3%80%82";
   function addQ(t){var q=document.createElement("p");q.className="q";q.innerHTML="<span></span>";q.firstChild.textContent=t;body.appendChild(q);}
   function addA(t){var a=document.createElement("p");a.className="a";a.innerHTML="<span></span>";a.firstChild.textContent=t;var l=document.createElement("a");l.className="chatline";l.href=LINE;l.target="_blank";l.rel="noopener";l.textContent="LINEで相談・予約する";a.appendChild(l);body.appendChild(a);body.scrollTop=body.scrollHeight;}
