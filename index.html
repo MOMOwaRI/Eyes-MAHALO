@@ -325,6 +325,28 @@ footer{text-align:center;font-size:12.5px;padding:26px 0 100px;color:#9a8578}
 .lqm-note{font-size:.85rem;line-height:1.7;margin:12px 0 16px}
 #lineQrClose{background:#06C755;color:#fff;border:none;border-radius:999px;padding:10px 28px;font-size:.95rem;font-weight:700;cursor:pointer}
 </style>
+<style>
+/* ===== motion-pack ===== */
+/* ===== motion-pack: scroll reveal (OHANAトップ方式) ===== */
+html.js .mrv{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+html.js .mrv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){html.js .mrv{opacity:1;transform:none;transition:none}}
+
+@keyframes mfu{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.mfu{animation:mfu .85s ease both;animation-delay:var(--md,0s)}
+@media (prefers-reduced-motion: reduce){.mfu{animation:none}}
+
+.mq{overflow:hidden;white-space:nowrap;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.mq-in{display:inline-flex;animation:mqmove 30s linear infinite;will-change:transform}
+.mq-half{padding:.55em 0}
+@keyframes mqmove{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion: reduce){.mq-in{animation:none}}
+.mq{background:var(--mist);color:#b45a78;font-family:"Shippori Mincho B1","Hiragino Mincho ProN","Yu Mincho",serif;font-size:13.5px;letter-spacing:.14em;border-bottom:1px solid #f0d5cb}
+
+@keyframes mpulse{0%,100%{box-shadow:0 8px 20px -8px rgba(6,199,85,.55)}50%{box-shadow:0 10px 28px -6px rgba(6,199,85,.9)}}
+.sticky .btn{animation:mpulse 2.8s ease-in-out infinite}
+@media (prefers-reduced-motion: reduce){.sticky .btn{animation:none}}
+</style>
 </head>
 <body>
 <header class="hero" aria-label="Eyes MAHALOの写真">
@@ -333,14 +355,15 @@ footer{text-align:center;font-size:12.5px;padding:26px 0 100px;color:#9a8578}
   <div class="slide"><img src="images/shop/shampoo_area.jpg" alt="中庭の見えるシャンプースペース" data-f="シャンプースペース"></div>
   <div class="dots" id="dots"></div>
   <div class="hc">
-    <small>松山市味酒町｜まつげパーマ専門</small>
-    <h1>どんなまつげも、<wbr>あきらめない。</h1>
-    <p class="kp" style="font-size:15px;color:#fff">目元が変わる。<wbr>毎日が、ちょっと変わる。</p>
-    <p style="display:inline-block;background:rgba(255,255,255,.92);color:var(--ink);font-weight:700;font-size:13px;border-radius:999px;padding:6px 14px;margin:0 0 14px">当日予約の相談もOK（空きがあれば今からでも）</p>
-    <a class="btn" href="https://line.me/R/oaMessage/@upe4525g/?LP%E3%81%8B%E3%82%89%E6%9D%A5%E3%81%BE%E3%81%97%E3%81%9F%E3%80%82%E3%81%BE%E3%81%A4%E3%81%92%E3%83%91%E3%83%BC%E3%83%9E%E3%81%AE%E7%9B%B8%E8%AB%87%E3%83%BB%E4%BA%88%E7%B4%84%E3%82%92%E3%81%8A%E9%A1%98%E3%81%84%E3%81%97%E3%81%BE%E3%81%99%E3%80%82" target="_blank" rel="noopener">LINEで相談・予約</a>
+    <small class="mfu" style="--md:0s">松山市味酒町｜まつげパーマ専門</small>
+    <h1 class="mfu" style="--md:.12s">どんなまつげも、<wbr>あきらめない。</h1>
+    <p class="kp mfu" style="--md:.24s;font-size:15px;color:#fff">目元が変わる。<wbr>毎日が、ちょっと変わる。</p>
+    <p class="mfu" style="--md:.36s;display:inline-block;background:rgba(255,255,255,.92);color:var(--ink);font-weight:700;font-size:13px;border-radius:999px;padding:6px 14px;margin:0 0 14px">当日予約の相談もOK（空きがあれば今からでも）</p>
+    <a class="btn mfu" style="--md:.5s" href="https://line.me/R/oaMessage/@upe4525g/?LP%E3%81%8B%E3%82%89%E6%9D%A5%E3%81%BE%E3%81%97%E3%81%9F%E3%80%82%E3%81%BE%E3%81%A4%E3%81%92%E3%83%91%E3%83%BC%E3%83%9E%E3%81%AE%E7%9B%B8%E8%AB%87%E3%83%BB%E4%BA%88%E7%B4%84%E3%82%92%E3%81%8A%E9%A1%98%E3%81%84%E3%81%97%E3%81%BE%E3%81%99%E3%80%82" target="_blank" rel="noopener">LINEで相談・予約</a>
   </div>
 </header>
 
+<div class="mq" aria-hidden="true"><div class="mq-in"><span class="mq-half">まつげパーマ　✦　遠赤外線まつげパーマ　✦　根元からしっかり　✦　完全予約制　✦　当日予約の相談もOK　✦　<span class="mqdot"></span></span><span class="mq-half">まつげパーマ　✦　遠赤外線まつげパーマ　✦　根元からしっかり　✦　完全予約制　✦　当日予約の相談もOK　✦　<span class="mqdot"></span></span></div></div>
 <nav class="nav" aria-label="ページ内メニュー"><a href="#menu">メニュー・料金</a><a href="#compare">特徴まとめ</a><a href="#gallery">サロンの様子</a><a href="#voices">お客様の声</a><a href="#faq">よくある質問</a><a href="#access">アクセス</a><a href="#official">公式サイト</a></nav>
 <main>
 <section>
@@ -872,5 +895,20 @@ body.site-editing [data-tk]{outline:2px dashed rgba(224,123,36,.55);outline-offs
 })();
 </script>
 
+
+<script>
+/* motion-pack: scroll reveal */
+(function(){
+document.documentElement.classList.add('js');
+if(!('IntersectionObserver' in window) || (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)) return;
+var list = Array.prototype.slice.call(document.querySelectorAll('section, footer'));
+list = list.filter(function(el){ return !list.some(function(o){ return o !== el && el.contains(o); }); });
+list.forEach(function(el){ el.classList.add('mrv'); });
+var io = new IntersectionObserver(function(entries){
+entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+}, {threshold: 0, rootMargin: '0px 0px 15% 0px'});
+list.forEach(function(el){ io.observe(el); });
+})();
+</script>
 </body>
 </html>
