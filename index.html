@@ -568,9 +568,9 @@ document.addEventListener("error",function(e){
 
 <button class="chatbtn" id="chatBtn" aria-haspopup="dialog">💬 質問する</button>
 <div class="chatpanel" id="chatPanel" role="dialog" aria-label="よくある質問チャット">
-  <div class="chathead">Eyes MAHALO｜質問チャット</div>
+  <div class="chathead">Eyes MAHALO</div>
   <div class="chatbody" id="chatBody">
-    <p class="a"><span>こんにちは。ボタンを選ぶか、下の欄に自由に書いてください。詳しい相談や予約はLINEからどうぞ。</span></p>
+    <p class="a"><span>こんにちは。Eyes MAHALOです。ボタンを選ぶか、下の欄に自由に書いてください。詳しい相談や予約はLINEからどうぞ。</span></p>
   </div>
   <div class="chatchips" id="chatChips">
     <button data-a="遠赤外線まつげパーマ 4,000円、根元パーマ 3,000円です。ヘッドスパとの同時施術も相談できます。">料金は？</button>
@@ -584,6 +584,7 @@ document.addEventListener("error",function(e){
     <input type="text" id="chatInput" placeholder="質問を書いてください（例：料金は？）" autocomplete="off">
     <button type="submit">送信</button>
   </form>
+  <p style="font-size:12px;color:#a5827a;margin:2px 14px 14px">※ AIが答えています。間違うこともあるので、大事なこと（日時・料金など）は、公式LINEでも確認してください。</p>
 </div>
 <script>
 (function(){
@@ -617,7 +618,24 @@ document.addEventListener("error",function(e){
     for(var i=0;i<RULES.length;i++){if(RULES[i][0].test(t)){logChat(TOPICS[i],'text');return RULES[i][1];}}
     logChat('答えられなかった質問','text');return "その内容は、LINEで直接聞いてもらえると正確にお答えできます。料金・持ち・予約方法などの質問なら、ここでも答えられます。";
   }
-  function ask(t,preset){t=(t||"").trim();if(!t)return;addQ(t);addA(preset||answer(t));}
+  function addTyping(){var a=document.createElement("p");a.className="a";a.innerHTML="<span>考え中…</span>";body.appendChild(a);body.scrollTop=body.scrollHeight;return a;}
+  function ask(t,preset){
+    t=(t||"").trim();if(!t)return;addQ(t);
+    if(preset){addA(preset);return;}
+    if(window.__geminiAsk){
+      var typing=addTyping();
+      window.__geminiAsk(t).then(function(aiAns){
+        if(typing)typing.remove();
+        if(aiAns){addA(aiAns);logChat('AIの回答','ai');}
+        else{var ans=answer(t);if(window.__logBot)window.__logBot(t,ans);addA(ans);}
+      }).catch(function(){
+        if(typing)typing.remove();
+        var ans=answer(t);if(window.__logBot)window.__logBot(t,ans);addA(ans);
+      });
+    } else {
+      var ans2=answer(t);if(window.__logBot)window.__logBot(t,ans2);addA(ans2);
+    }
+  }
   document.getElementById("chatChips").addEventListener("click",function(e){
     var t=e.target;if(t.tagName!=="BUTTON")return;ask(t.textContent,t.getAttribute("data-a"));logChat(t.textContent,'chip');
   });
@@ -627,6 +645,57 @@ document.addEventListener("error",function(e){
 })();
 </script>
 
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-app.js";
+import { initializeAppCheck, ReCaptchaEnterpriseProvider } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-app-check.js";
+import { getAI, getGenerativeModel, GoogleAIBackend } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-ai.js";
+import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-firestore.js";
+var SYS = "あなたは、愛媛県松山市のまつげパーマ専門店「Eyes MAHALO」のサイト案内役です。名前はありません。名前を聞かれたら「Eyes MAHALOです」と答えてください。質問には親しみやすく、短く（1〜3文）答えてください。\n\n\n・嘘をつかないでください。下の知識にないことは作り話をせず、正直に「分からない」と言って、公式LINEを案内してください。\n・料金・時間・場所は、知識にあるものだけをそのまま正確に伝えてください。推測で数字を言わないでください。\n・予約の空き状況は絶対に断定しないでください。「空きはLINEで確認できます」と案内してください。\n・電話番号は出さないでください。電話したい人には、ページ下の「アクセス」にある電話ボタンを案内してください。\n・目の病気・アレルギーなど医療に関わる判断はせず、LINEでの相談か専門家を案内してください。\n・Eyes MAHALOと関係のない質問には、「まつげパーマのことなら答えられます」とやんわり返してください。\n\n\n・まつげパーマ歴15年以上。遠赤外線のキラ水とアイマスクを使う施術です（温める施術ではありません）。根元からしっかり立ち上げます。\n・料金：遠赤外線まつげパーマ 4,000円、根元メニュー 3,000円。根元メンテナンスは3週間以内が目安です。ヘッドスパの同時施術もできます（キラ水使用）。\n・持ちは毛質や生え替わり、日々の扱い方で個人差があります。\n・完全予約制です。対応時間は7:30〜19:30（月〜土）、日・祝は要相談。早朝・夜間・月曜日も相談できます。営業は予約の時間のみです。\n・予約と空き確認は公式LINEが確実です：https://lin.ee/q8vBvt1\n・場所：松山市味酒町3-2-29 MAHALOビル1階。古町駅・フジグラン松山から徒歩約3分。駐車場があります（場所は予約時にLINEで案内します）。\n・支払いは現金のほかクレジットカードや各種QR決済が使えます。\n・ペア施術やお子様連れも相談できます（予約時にLINEで知らせてください）。";
+try {
+  var aiApp = initializeApp({
+  apiKey: "AIzaSyCao64N8dfQoXBmsMHIDpLpQwQyXp-2iw0",
+  authDomain: "ohana-share.firebaseapp.com",
+  projectId: "ohana-share",
+  storageBucket: "ohana-share.firebasestorage.app",
+  messagingSenderId: "825904150210",
+  appId: "1:825904150210:web:4ae90f047ac8cc761cad5b"
+}, 'ohana-ai');
+  initializeAppCheck(aiApp, { provider: new ReCaptchaEnterpriseProvider('6LfLJwcuAAAAAJk3CSivW9C-9E0Q-Cexl9wwibrv'), isTokenAutoRefreshEnabled: true });
+  var aiDb = getFirestore(aiApp);
+  var ai = getAI(aiApp, { backend: new GoogleAIBackend() });
+  var model = getGenerativeModel(ai, { model: 'gemini-3.5-flash-lite', systemInstruction: SYS });
+  var chat = null;
+  function kunUsed(){
+    try {
+      var d = new Date();
+      var key = 'eyes_kun_' + d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate();
+      var n = parseInt(localStorage.getItem(key) || '0', 10) + 1;
+      localStorage.setItem(key, String(n));
+      return n;
+    } catch(e){ return 1; }
+  }
+
+  window.__logBot = function(q, a){
+    try { addDoc(collection(aiDb, 'botLogs'), { q: String(q).slice(0, 300), a: String(a || '').slice(0, 2000), page: location.pathname, site: 'eyes', ts: serverTimestamp() }).catch(function(){}); } catch(e){}
+  };
+  window.__geminiAsk = function(text){
+    if (kunUsed() > 20) return Promise.resolve("たくさん聞いてくれて、ありがとうございます。ここから先は公式LINEで直接聞いてくださいね。空き確認もLINEが一番早くて確実です。");
+    function attempt(){
+      if (!chat) chat = model.startChat({ history: [] });
+      return chat.sendMessage(text).then(function(res){ return res.response.text(); });
+    }
+    var p = attempt().catch(function(){ chat = null; return attempt(); });
+    var timeout = new Promise(function(res){ setTimeout(function(){ res(null); }, 15000); });
+    return Promise.race([p, timeout]).then(function(ans){
+      if (ans) {
+        try { addDoc(collection(aiDb, 'botLogs'), { q: text, a: String(ans).slice(0, 2000), page: location.pathname, site: 'eyes', ts: serverTimestamp() }).catch(function(){}); } catch(e){}
+        return String(ans);
+      }
+      return null;
+    }).catch(function(){ return null; });
+  };
+} catch(e){}
+</script>
 <div id="lineQrModal" hidden role="dialog" aria-label="LINE QRコード">
   <div class="lqm-box">
     <p class="lqm-title">LINEはスマホで開いてください</p>
