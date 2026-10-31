@@ -296,8 +296,8 @@ footer{text-align:center;font-size:12.5px;padding:26px 0 100px;color:#9a8578}
 .win{border:1px solid #f0d9d0;border-radius:14px;overflow:hidden;margin:16px 0;background:#fff}.winhead{display:flex;justify-content:space-between;align-items:center;background:var(--mist);padding:9px 14px;font-weight:700;font-size:13.5px;color:var(--ink)}.winhead a{color:var(--leaf);text-decoration:none;font-size:12.5px}.win iframe{width:100%;height:540px;border:0;display:block}
 .cmp{width:100%;border-collapse:collapse;margin-top:6px}.cmp th,.cmp td{border-bottom:1px solid #f0d9d0;padding:11px 8px;text-align:left;font-size:14px;vertical-align:top}.cmp th{width:32%;color:var(--ink);background:#fff5f0;font-weight:700}
 /* chat bot */
-.chatbtn{position:fixed;right:14px;bottom:calc(84px + env(safe-area-inset-bottom,0px));z-index:11;background:var(--leaf);color:#fff;border:0;border-radius:999px;padding:12px 18px;font:700 14px "Zen Kaku Gothic New",sans-serif;box-shadow:0 10px 24px -8px rgba(207,111,141,.7);cursor:pointer}
-.chatpanel{position:fixed;right:12px;bottom:calc(140px + env(safe-area-inset-bottom,0px));z-index:12;width:min(92vw,350px);max-height:62vh;display:none;flex-direction:column;background:#fff;border:1px solid #f0d9d0;border-radius:16px;box-shadow:0 18px 40px -12px rgba(90,66,56,.35);overflow:hidden}
+.chatbtn{position:fixed;right:max(14px, calc(50% - 374px));bottom:calc(84px + env(safe-area-inset-bottom,0px));z-index:11;background:var(--leaf);color:#fff;border:0;border-radius:999px;padding:12px 18px;font:700 14px "Zen Kaku Gothic New",sans-serif;box-shadow:0 10px 24px -8px rgba(207,111,141,.7);cursor:pointer}
+.chatpanel{position:fixed;right:max(12px, calc(50% - 372px));bottom:calc(140px + env(safe-area-inset-bottom,0px));z-index:12;width:min(92vw,350px);max-height:62vh;display:none;flex-direction:column;background:#fff;border:1px solid #f0d9d0;border-radius:16px;box-shadow:0 18px 40px -12px rgba(90,66,56,.35);overflow:hidden}
 .chatpanel.open{display:flex}
 .chathead{background:var(--mist);padding:12px 16px;font-weight:700;color:var(--ink);font-size:14px}
 .chatbody{padding:14px;overflow-y:auto;font-size:14px;line-height:1.7}
@@ -316,7 +316,6 @@ footer{text-align:center;font-size:12.5px;padding:26px 0 100px;color:#9a8578}
 @media (min-width:520px){
   html{background:#E7DFD3}
   body{max-width:720px;margin:0 auto;box-shadow:0 0 24px rgba(90,70,50,.18)}
-  .chatbtn,.chatpanel{right:calc(50% - 344px)}
   .sticky{left:calc(50% - 360px);right:calc(50% - 360px)}
 }
 </style>
