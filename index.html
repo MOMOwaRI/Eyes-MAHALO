@@ -263,10 +263,15 @@ h2{font-size:clamp(21px,5.6vw,29px);margin-bottom:20px}
 .row span{font:700 25px "Shippori Mincho B1",serif;color:var(--leaf)}
 .row p{margin:6px 0 0;font-size:14px}
 /* gallery */
-.strip{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 20px 8px;-webkit-overflow-scrolling:touch}
-.strip figure{flex:0 0 78%;max-width:340px;margin:0;scroll-snap-align:center}
+.strip{overflow:hidden;padding:0 0 8px}
+.strip-track{display:flex;width:max-content;animation:stripScroll 55s linear infinite}
+.strip:hover .strip-track,.strip.paused .strip-track{animation-play-state:paused}
+.strip-set{display:flex;gap:12px;padding-right:12px}
+.strip figure{flex:0 0 300px;width:300px;margin:0}
+@keyframes stripScroll{to{transform:translateX(-50%)}}
 .strip img,.strip .miss{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:110px 110px 14px 14px;background:var(--mist)}
 .strip figcaption{font-size:13.5px;text-align:center;margin-top:8px}
+.igcap{font-size:12.5px;color:#7a6a63;margin:-10px 4px 0;line-height:1.7}
 /* review */
 .rv{border-left:3px solid var(--pink);padding:2px 0 2px 14px;margin:0 0 16px}
 .rv p{margin:0 0 4px}
@@ -287,7 +292,7 @@ footer{text-align:center;font-size:12.5px;padding:26px 0 100px;color:#9a8578}
 .sticky{position:fixed;left:0;right:0;bottom:0;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:rgba(255,251,248,.93);backdrop-filter:blur(8px);text-align:center;z-index:9}
 .sticky .btn{width:100%;max-width:420px}
 
-.nav{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;padding:16px 20px 0}.nav a{border:1px solid var(--pink);border-radius:999px;padding:7px 14px;text-decoration:none;font-size:13.5px;font-weight:700;color:var(--ink);background:#fff}
+.nav{display:flex;gap:5px;flex-wrap:wrap;justify-content:center;padding:10px 12px 0}.nav a{border:1px solid var(--pink);border-radius:999px;padding:4px 10px;text-decoration:none;font-size:12px;font-weight:700;color:var(--ink);background:#fff;white-space:nowrap}
 .win{border:1px solid #f0d9d0;border-radius:14px;overflow:hidden;margin:16px 0;background:#fff}.winhead{display:flex;justify-content:space-between;align-items:center;background:var(--mist);padding:9px 14px;font-weight:700;font-size:13.5px;color:var(--ink)}.winhead a{color:var(--leaf);text-decoration:none;font-size:12.5px}.win iframe{width:100%;height:540px;border:0;display:block}
 .cmp{width:100%;border-collapse:collapse;margin-top:6px}.cmp th,.cmp td{border-bottom:1px solid #f0d9d0;padding:11px 8px;text-align:left;font-size:14px;vertical-align:top}.cmp th{width:32%;color:var(--ink);background:#fff5f0;font-weight:700}
 /* chat bot */
@@ -304,7 +309,7 @@ footer{text-align:center;font-size:12.5px;padding:26px 0 100px;color:#9a8578}
 .chatchips button{border:1px solid var(--pink);background:#fff;color:var(--ink);border-radius:999px;padding:7px 12px;font-size:13px;cursor:pointer}
 .chatform{display:flex;gap:8px;padding:0 14px 14px}.chatform input{flex:1;min-width:0;border:1px solid #f0c9d4;border-radius:999px;padding:10px 14px;font-size:14px;font-family:inherit}.chatform button{border:0;background:var(--leaf);color:#fff;font-weight:700;border-radius:999px;padding:10px 16px;font-size:14px;cursor:pointer}
 .chatline{display:block;margin-top:8px;background:var(--line);color:#fff;text-align:center;font-weight:700;text-decoration:none;padding:10px;border-radius:999px}
-@media(prefers-reduced-motion:reduce){.slide{transition:none}.slide.on img{animation:none}html{scroll-behavior:auto}.btn{transition:none}}
+@media(prefers-reduced-motion:reduce){.slide{transition:none}.slide.on img{animation:none}.strip-track{animation:none}html{scroll-behavior:auto}.btn{transition:none}}
 </style>
 <style>
 /* PCはスマホ幅で表示 */
@@ -440,7 +445,7 @@ html.js .mrv.in{opacity:1;transform:none}
 
 <section class="tint" id="gallery" style="padding-left:0;padding-right:0">
   <div class="w"><p class="sub">サロンの様子</p><h2>MAHALOビルの1階です。</h2></div>
-  <div class="strip">
+  <div class="strip"><div class="strip-track"><div class="strip-set" id="stripSet">
     <figure><img src="IMG_1284.jpeg" alt="Eyes MAHALOのご案内" loading="lazy" data-f="IMG_1284.jpeg"><figcaption>ご案内</figcaption></figure>
     <figure><img src="images/shop/goods.jpg" alt="店内のインテリア雑貨" loading="lazy"><figcaption>店内のインテリア</figcaption></figure>
     <figure><img src="images/shop/img004.jpg" alt="まつげパーマの施術の様子" loading="lazy"><figcaption>施術の様子</figcaption></figure>
@@ -451,7 +456,7 @@ html.js .mrv.in{opacity:1;transform:none}
     <figure><img src="images/shop/g_sign.jpg" alt="MAHALOの看板と店舗前" loading="lazy"><figcaption>お店の看板</figcaption></figure>
     <figure><img src="images/shop/g_zakka.jpg" alt="雑貨屋Lea Mahaloの案内ボード" loading="lazy"><figcaption>雑貨屋さんの看板</figcaption></figure>
     <figure><img src="images/shop/g_cat.jpg" alt="店先の猫" loading="lazy"><figcaption>店先の猫</figcaption></figure>
-  </div>
+  </div></div></div>
   <div class="w"><p class="note" style="margin-top:10px">※写真はすべてMAHALOの実際の店舗・施術の様子です。</p></div>
 </section>
 
@@ -557,27 +562,49 @@ html.js .mrv.in{opacity:1;transform:none}
     <p>施術の様子や、まつげのお悩みへの投稿です。タップするとInstagramで開きます。</p>
     <div style="max-width:400px;margin:18px auto 0;display:flex;flex-direction:column;gap:18px">
       <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DUu-Y0BEsTx/" data-instgrm-version="14" style="margin:0 auto;width:100%"><a href="https://www.instagram.com/reel/DUu-Y0BEsTx/" target="_blank" rel="noopener">まつげパーマのビフォーアフター（MAHALO公式Instagram）</a></blockquote>
+      <p class="igcap">まつげパーマのビフォーアフター動画です。施術前と後のカールの違いが見られます。</p>
       <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DU9OgVVEi0j/" data-instgrm-version="14" style="margin:0 auto;width:100%"><a href="https://www.instagram.com/reel/DU9OgVVEi0j/" target="_blank" rel="noopener">松山まつげパーマの投稿（MAHALO公式Instagram）</a></blockquote>
+      <p class="igcap">松山まつげパーマの施術の様子を動画で紹介しています。</p>
       <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DVn4e0ZAaTp/" data-instgrm-version="14" style="margin:0 auto;width:100%"><a href="https://www.instagram.com/reel/DVn4e0ZAaTp/" target="_blank" rel="noopener">小学生のまつげパーマ・逆まつげの投稿（MAHALO公式Instagram）</a></blockquote>
+      <p class="igcap">小学生のまつげパーマの様子です。逆まつげのご相談も受けています。</p>
       <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DUJO1YTEjL9/" data-instgrm-version="14" style="margin:0 auto;width:100%"><a href="https://www.instagram.com/p/DUJO1YTEjL9/" target="_blank" rel="noopener">まつげパーマ・キッズ・ペア割の投稿（MAHALO公式Instagram）</a></blockquote>
+      <p class="igcap">まつげパーマのご案内です。お子さま連れの施術やペア割の相談もできます。</p>
       <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DU9N0nNk_YR/" data-instgrm-version="14" style="margin:0 auto;width:100%"><a href="https://www.instagram.com/reel/DU9N0nNk_YR/" target="_blank" rel="noopener">まつげパーマの投稿（有里のInstagram）</a></blockquote>
+      <p class="igcap">店主・中岡有里による、まつげパーマの施術動画です。</p>
       <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DUKs7BBEztz/" data-instgrm-version="14" style="margin:0 auto;width:100%"><a href="https://www.instagram.com/reel/DUKs7BBEztz/" target="_blank" rel="noopener">まつげパーマ・逆まつげの投稿（有里のInstagram）</a></blockquote>
+      <p class="igcap">逆まつげとまつげパーマについての投稿です。</p>
       <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DUu8yeDkn_p/" data-instgrm-version="14" style="margin:0 auto;width:100%"><a href="https://www.instagram.com/reel/DUu8yeDkn_p/" target="_blank" rel="noopener">まつげパーマの投稿（MAHALO公式Instagram）</a></blockquote>
+      <p class="igcap">まつげパーマの施術の様子を動画で紹介しています。</p>
       <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DUuN-BLEhQO/" data-instgrm-version="14" style="margin:0 auto;width:100%"><a href="https://www.instagram.com/reel/DUuN-BLEhQO/" target="_blank" rel="noopener">まつげパーマの投稿（MAHALO公式Instagram）</a></blockquote>
+      <p class="igcap">まつげパーマの施術の様子を動画で紹介しています。</p>
       <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DUsIBNukudv/" data-instgrm-version="14" style="margin:0 auto;width:100%"><a href="https://www.instagram.com/reel/DUsIBNukudv/" target="_blank" rel="noopener">松山まつげパーマの投稿（MAHALO公式Instagram）</a></blockquote>
+      <p class="igcap">松山まつげパーマの施術の様子を動画で紹介しています。</p>
       <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DUKhuvokqw-/" data-instgrm-version="14" style="margin:0 auto;width:100%"><a href="https://www.instagram.com/reel/DUKhuvokqw-/" target="_blank" rel="noopener">上下まつげパーマ・逆まつげの投稿（MAHALO公式Instagram）</a></blockquote>
+      <p class="igcap">上下のまつげパーマと、逆まつげ・まつげの生え癖についての投稿です。</p>
       <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DUKe4v9kk7g/" data-instgrm-version="14" style="margin:0 auto;width:100%"><a href="https://www.instagram.com/reel/DUKe4v9kk7g/" target="_blank" rel="noopener">まつげパーマの投稿（MAHALO公式Instagram）</a></blockquote>
+      <p class="igcap">まつげパーマ（マツパ）の施術の様子を動画で紹介しています。</p>
       <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DeS325BAdTa/" data-instgrm-version="14" style="margin:0 auto;width:100%"><a href="https://www.instagram.com/p/DeS325BAdTa/" target="_blank" rel="noopener">まつげパーマの投稿（MAHALO公式Instagram）</a></blockquote>
+      <p class="igcap">まつげパーマの仕上がり写真です。</p>
       <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DD0YrpRTefE/" data-instgrm-version="14" style="margin:0 auto;width:100%"><a href="https://www.instagram.com/p/DD0YrpRTefE/" target="_blank" rel="noopener">まつ毛パーマ専門メニューの投稿（MAHALO公式Instagram）</a></blockquote>
+      <p class="igcap">まつ毛パーマ専門のメニュー紹介です。遠赤外線まつげパーマは4,000円です。</p>
       <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/Cw_sSy5v6Lw/" data-instgrm-version="14" style="margin:0 auto;width:100%"><a href="https://www.instagram.com/p/Cw_sSy5v6Lw/" target="_blank" rel="noopener">回数券・遠赤外線キラ水まつげパーマの投稿（MAHALO公式Instagram）</a></blockquote>
+      <p class="igcap">回数券と、遠赤外線と煌水（キラ水）を使うまつげパーマの紹介です。</p>
       <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/C0iUG9cP7ur/" data-instgrm-version="14" style="margin:0 auto;width:100%"><a href="https://www.instagram.com/p/C0iUG9cP7ur/" target="_blank" rel="noopener">まつげパーマ松山・クーポンの投稿（MAHALO公式Instagram）</a></blockquote>
+      <p class="igcap">まつげパーマのクーポンとサブスクのご案内です。</p>
       <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CznsNHEv7Iu/" data-instgrm-version="14" style="margin:0 auto;width:100%"><a href="https://www.instagram.com/p/CznsNHEv7Iu/" target="_blank" rel="noopener">まつげパーマ・クーポンの投稿（MAHALO公式Instagram）</a></blockquote>
+      <p class="igcap">まつげパーマのクーポンのご案内です。</p>
       <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/Crie7hRAThU/" data-instgrm-version="14" style="margin:0 auto;width:100%"><a href="https://www.instagram.com/reel/Crie7hRAThU/" target="_blank" rel="noopener">まつげパーマの投稿（MAHALO公式Instagram）</a></blockquote>
+      <p class="igcap">まつげパーマの施術の様子を動画で紹介しています。</p>
       <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/Crid06TvZy1/" data-instgrm-version="14" style="margin:0 auto;width:100%"><a href="https://www.instagram.com/reel/Crid06TvZy1/" target="_blank" rel="noopener">まつげパーマモデルの投稿（MAHALO公式Instagram）</a></blockquote>
+      <p class="igcap">まつげパーマモデルの施術の様子を動画で紹介しています。</p>
       <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CN2HLkCDEi3/" data-instgrm-version="14" style="margin:0 auto;width:100%"><a href="https://www.instagram.com/p/CN2HLkCDEi3/" target="_blank" rel="noopener">逆まつげとまつげパーマの投稿（有里のInstagram）</a></blockquote>
+      <p class="igcap">逆まつげに悩むお子さまと、まつげパーマについての体験投稿です。</p>
       <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/BWj-WvShfmK/" data-instgrm-version="14" style="margin:0 auto;width:100%"><a href="https://www.instagram.com/p/BWj-WvShfmK/" target="_blank" rel="noopener">まつげパーマのビフォーアフター（MAHALO公式Instagram）</a></blockquote>
+      <p class="igcap">まつげパーマのビフォーアフター写真です。</p>
       <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/BVj8akQBBwS/" data-instgrm-version="14" style="margin:0 auto;width:100%"><a href="https://www.instagram.com/p/BVj8akQBBwS/" target="_blank" rel="noopener">まつ毛パーマ専門の投稿（MAHALO公式Instagram）</a></blockquote>
+      <p class="igcap">まつ毛パーマ専門の紹介です。まつげ美容液での育毛ケアも扱っています。</p>
       <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/CwFBuCgBCPC/" data-instgrm-version="14" style="margin:0 auto;width:100%"><a href="https://www.instagram.com/reel/CwFBuCgBCPC/" target="_blank" rel="noopener">眉カットの投稿（有里のInstagram）</a></blockquote>
+      <p class="igcap">眉カット（700円）の様子です。まつげと合わせた目元のケアも相談できます。</p>
     </div>
   </div>
   <script async src="https://www.instagram.com/embed.js"></script>
@@ -607,18 +634,12 @@ document.addEventListener("error",function(e){
 })();
 (function(){
   var strip=document.querySelector(".strip");if(!strip)return;
-  if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;
-  var items=[].slice.call(strip.children);if(items.length<2)return;
-  var holdUntil=0;
-  function pos(it){return it.getBoundingClientRect().left-strip.getBoundingClientRect().left+strip.scrollLeft-20;}
-  function current(){var best=0,bd=1e12;items.forEach(function(it,k){var d=Math.abs(pos(it)-strip.scrollLeft);if(d<bd){bd=d;best=k;}});return best;}
-  setInterval(function(){
-    if(Date.now()<holdUntil||document.hidden)return;
-    var idx=current()+1;
-    if(idx>=items.length){strip.scrollTo({left:0,behavior:"smooth"});return;}
-    strip.scrollTo({left:pos(items[idx]),behavior:"smooth"});
-  },3500);
-  ["pointerdown","touchstart","wheel"].forEach(function(ev){strip.addEventListener(ev,function(){holdUntil=Date.now()+6000;},{passive:true});});
+  var set=document.getElementById("stripSet");if(!set)return;
+  var clone=set.cloneNode(true);clone.removeAttribute("id");clone.setAttribute("aria-hidden","true");
+  clone.querySelectorAll("img").forEach(function(im){im.alt="";im.loading="lazy";});
+  strip.querySelector(".strip-track").appendChild(clone);
+  var resume;
+  strip.addEventListener("pointerdown",function(){strip.classList.add("paused");clearTimeout(resume);resume=setTimeout(function(){strip.classList.remove("paused");},4000);});
 })();
 </script>
 
@@ -812,8 +833,8 @@ body.site-editing [data-tk]{outline:2px dashed rgba(224,123,36,.55);outline-offs
     var out = [];
     document.querySelectorAll('body *').forEach(function(el){
       var tg = el.tagName;
-      if(tg === 'A' || tg === 'SCRIPT' || tg === 'STYLE' || tg === 'NOSCRIPT' || tg === 'TEXTAREA' || tg === 'SELECT' || tg === 'INPUT' || tg === 'IMG' || tg === 'BR' || tg === 'IFRAME') return;
-      if(el.closest('a')) return;
+      if(tg === 'SCRIPT' || tg === 'STYLE' || tg === 'NOSCRIPT' || tg === 'TEXTAREA' || tg === 'SELECT' || tg === 'INPUT' || tg === 'IMG' || tg === 'BR' || tg === 'IFRAME') return;
+      if(tg !== 'A' && el.closest('a')) return;
       if(!pureText(el)) return;
       if(excluded(el)) return;
       out.push(el);
@@ -869,6 +890,7 @@ body.site-editing [data-tk]{outline:2px dashed rgba(224,123,36,.55);outline-offs
     document.body.appendChild(bar);
     $('sb-save').addEventListener('click', saveAll);
     $('sb-cancel').addEventListener('click', function(){ if(confirm('保存していない変更を、元に戻しますか？')){ undoEdit(); setEdit(false); } });
+    document.addEventListener('click', function(e){ if(editing && e.target && e.target.closest && e.target.closest('a')) e.preventDefault(); }, true);
     window.__toggleSiteEdit = function(){ setEdit(!editing); };
     window.__isSiteEditing = function(){ return editing; };
     firebase.auth().onAuthStateChanged(function(u){
