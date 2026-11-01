@@ -271,7 +271,11 @@ h2{font-size:clamp(21px,5.6vw,29px);margin-bottom:20px}
 @keyframes stripScroll{to{transform:translateX(-50%)}}
 .strip img,.strip .miss{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:110px 110px 14px 14px;background:var(--mist)}
 .strip figcaption{font-size:13.5px;text-align:center;margin-top:8px}
-.igcap{font-size:12.5px;color:#7a6a63;margin:-10px 4px 0;line-height:1.7}
+.igcap{font-size:11.5px;color:#7a6a63;margin:6px 2px 0;line-height:1.6}
+.iggrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px 10px;max-width:680px;margin:18px auto 0;padding:0 6px}
+.igthumb{display:block;position:relative;border-radius:12px;overflow:hidden;aspect-ratio:4/5;background:var(--mist)}
+.igthumb img{width:100%;height:100%;object-fit:cover;display:block}
+.igplay{position:absolute;right:6px;top:6px;background:rgba(0,0,0,.55);color:#fff;font-size:10px;border-radius:999px;padding:2px 7px}
 /* review */
 .rv{border-left:3px solid var(--pink);padding:2px 0 2px 14px;margin:0 0 16px}
 .rv p{margin:0 0 4px}
@@ -560,54 +564,30 @@ html.js .mrv.in{opacity:1;transform:none}
     <p class="sub">Instagram</p>
     <h2>まつげの投稿を<wbr>集めました。</h2>
     <p>施術の様子や、まつげのお悩みへの投稿です。タップするとInstagramで開きます。</p>
-    <div style="max-width:400px;margin:18px auto 0;display:flex;flex-direction:column;gap:18px">
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DUu-Y0BEsTx/" data-instgrm-version="14" style="margin:0 auto;width:100%"><a href="https://www.instagram.com/reel/DUu-Y0BEsTx/" target="_blank" rel="noopener">まつげパーマのビフォーアフター（MAHALO公式Instagram）</a></blockquote>
-      <p class="igcap">まつげパーマのビフォーアフター動画です。施術前と後のカールの違いが見られます。</p>
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DU9OgVVEi0j/" data-instgrm-version="14" style="margin:0 auto;width:100%"><a href="https://www.instagram.com/reel/DU9OgVVEi0j/" target="_blank" rel="noopener">松山まつげパーマの投稿（MAHALO公式Instagram）</a></blockquote>
-      <p class="igcap">松山まつげパーマの施術の様子を動画で紹介しています。</p>
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DVn4e0ZAaTp/" data-instgrm-version="14" style="margin:0 auto;width:100%"><a href="https://www.instagram.com/reel/DVn4e0ZAaTp/" target="_blank" rel="noopener">小学生のまつげパーマ・逆まつげの投稿（MAHALO公式Instagram）</a></blockquote>
-      <p class="igcap">小学生のまつげパーマの様子です。逆まつげのご相談も受けています。</p>
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DUJO1YTEjL9/" data-instgrm-version="14" style="margin:0 auto;width:100%"><a href="https://www.instagram.com/p/DUJO1YTEjL9/" target="_blank" rel="noopener">まつげパーマ・キッズ・ペア割の投稿（MAHALO公式Instagram）</a></blockquote>
-      <p class="igcap">まつげパーマのご案内です。お子さま連れの施術やペア割の相談もできます。</p>
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DU9N0nNk_YR/" data-instgrm-version="14" style="margin:0 auto;width:100%"><a href="https://www.instagram.com/reel/DU9N0nNk_YR/" target="_blank" rel="noopener">まつげパーマの投稿（有里のInstagram）</a></blockquote>
-      <p class="igcap">店主・中岡有里による、まつげパーマの施術動画です。</p>
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DUKs7BBEztz/" data-instgrm-version="14" style="margin:0 auto;width:100%"><a href="https://www.instagram.com/reel/DUKs7BBEztz/" target="_blank" rel="noopener">まつげパーマ・逆まつげの投稿（有里のInstagram）</a></blockquote>
-      <p class="igcap">逆まつげとまつげパーマについての投稿です。</p>
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DUu8yeDkn_p/" data-instgrm-version="14" style="margin:0 auto;width:100%"><a href="https://www.instagram.com/reel/DUu8yeDkn_p/" target="_blank" rel="noopener">まつげパーマの投稿（MAHALO公式Instagram）</a></blockquote>
-      <p class="igcap">まつげパーマの施術の様子を動画で紹介しています。</p>
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DUuN-BLEhQO/" data-instgrm-version="14" style="margin:0 auto;width:100%"><a href="https://www.instagram.com/reel/DUuN-BLEhQO/" target="_blank" rel="noopener">まつげパーマの投稿（MAHALO公式Instagram）</a></blockquote>
-      <p class="igcap">まつげパーマの施術の様子を動画で紹介しています。</p>
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DUsIBNukudv/" data-instgrm-version="14" style="margin:0 auto;width:100%"><a href="https://www.instagram.com/reel/DUsIBNukudv/" target="_blank" rel="noopener">松山まつげパーマの投稿（MAHALO公式Instagram）</a></blockquote>
-      <p class="igcap">松山まつげパーマの施術の様子を動画で紹介しています。</p>
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DUKhuvokqw-/" data-instgrm-version="14" style="margin:0 auto;width:100%"><a href="https://www.instagram.com/reel/DUKhuvokqw-/" target="_blank" rel="noopener">上下まつげパーマ・逆まつげの投稿（MAHALO公式Instagram）</a></blockquote>
-      <p class="igcap">上下のまつげパーマと、逆まつげ・まつげの生え癖についての投稿です。</p>
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DUKe4v9kk7g/" data-instgrm-version="14" style="margin:0 auto;width:100%"><a href="https://www.instagram.com/reel/DUKe4v9kk7g/" target="_blank" rel="noopener">まつげパーマの投稿（MAHALO公式Instagram）</a></blockquote>
-      <p class="igcap">まつげパーマ（マツパ）の施術の様子を動画で紹介しています。</p>
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DeS325BAdTa/" data-instgrm-version="14" style="margin:0 auto;width:100%"><a href="https://www.instagram.com/p/DeS325BAdTa/" target="_blank" rel="noopener">まつげパーマの投稿（MAHALO公式Instagram）</a></blockquote>
-      <p class="igcap">まつげパーマの仕上がり写真です。</p>
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DD0YrpRTefE/" data-instgrm-version="14" style="margin:0 auto;width:100%"><a href="https://www.instagram.com/p/DD0YrpRTefE/" target="_blank" rel="noopener">まつ毛パーマ専門メニューの投稿（MAHALO公式Instagram）</a></blockquote>
-      <p class="igcap">まつ毛パーマ専門のメニュー紹介です。遠赤外線まつげパーマは4,000円です。</p>
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/Cw_sSy5v6Lw/" data-instgrm-version="14" style="margin:0 auto;width:100%"><a href="https://www.instagram.com/p/Cw_sSy5v6Lw/" target="_blank" rel="noopener">回数券・遠赤外線キラ水まつげパーマの投稿（MAHALO公式Instagram）</a></blockquote>
-      <p class="igcap">回数券と、遠赤外線と煌水（キラ水）を使うまつげパーマの紹介です。</p>
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/C0iUG9cP7ur/" data-instgrm-version="14" style="margin:0 auto;width:100%"><a href="https://www.instagram.com/p/C0iUG9cP7ur/" target="_blank" rel="noopener">まつげパーマ松山・クーポンの投稿（MAHALO公式Instagram）</a></blockquote>
-      <p class="igcap">まつげパーマのクーポンとサブスクのご案内です。</p>
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CznsNHEv7Iu/" data-instgrm-version="14" style="margin:0 auto;width:100%"><a href="https://www.instagram.com/p/CznsNHEv7Iu/" target="_blank" rel="noopener">まつげパーマ・クーポンの投稿（MAHALO公式Instagram）</a></blockquote>
-      <p class="igcap">まつげパーマのクーポンのご案内です。</p>
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/Crie7hRAThU/" data-instgrm-version="14" style="margin:0 auto;width:100%"><a href="https://www.instagram.com/reel/Crie7hRAThU/" target="_blank" rel="noopener">まつげパーマの投稿（MAHALO公式Instagram）</a></blockquote>
-      <p class="igcap">まつげパーマの施術の様子を動画で紹介しています。</p>
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/Crid06TvZy1/" data-instgrm-version="14" style="margin:0 auto;width:100%"><a href="https://www.instagram.com/reel/Crid06TvZy1/" target="_blank" rel="noopener">まつげパーマモデルの投稿（MAHALO公式Instagram）</a></blockquote>
-      <p class="igcap">まつげパーマモデルの施術の様子を動画で紹介しています。</p>
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CN2HLkCDEi3/" data-instgrm-version="14" style="margin:0 auto;width:100%"><a href="https://www.instagram.com/p/CN2HLkCDEi3/" target="_blank" rel="noopener">逆まつげとまつげパーマの投稿（有里のInstagram）</a></blockquote>
-      <p class="igcap">逆まつげに悩むお子さまと、まつげパーマについての体験投稿です。</p>
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/BWj-WvShfmK/" data-instgrm-version="14" style="margin:0 auto;width:100%"><a href="https://www.instagram.com/p/BWj-WvShfmK/" target="_blank" rel="noopener">まつげパーマのビフォーアフター（MAHALO公式Instagram）</a></blockquote>
-      <p class="igcap">まつげパーマのビフォーアフター写真です。</p>
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/BVj8akQBBwS/" data-instgrm-version="14" style="margin:0 auto;width:100%"><a href="https://www.instagram.com/p/BVj8akQBBwS/" target="_blank" rel="noopener">まつ毛パーマ専門の投稿（MAHALO公式Instagram）</a></blockquote>
-      <p class="igcap">まつ毛パーマ専門の紹介です。まつげ美容液での育毛ケアも扱っています。</p>
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/CwFBuCgBCPC/" data-instgrm-version="14" style="margin:0 auto;width:100%"><a href="https://www.instagram.com/reel/CwFBuCgBCPC/" target="_blank" rel="noopener">眉カットの投稿（有里のInstagram）</a></blockquote>
-      <p class="igcap">眉カット（700円）の様子です。まつげと合わせた目元のケアも相談できます。</p>
-    </div>
-  </div>
-  <script async src="https://www.instagram.com/embed.js"></script>
+    <div class="iggrid">
+      <div class="igitem"><a class="igthumblink" href="https://www.instagram.com/reel/DUu-Y0BEsTx/" target="_blank" rel="noopener" aria-label="Instagramで投稿を見る"><span class="igthumb"><img src="images/ig/DUu-Y0BEsTx.jpg" alt="まつげパーマのビフォーアフター動画です。施術前と後のカールの違いが見られます。" loading="lazy"><span class="igplay">▶ 動画</span></span></a><p class="igcap">まつげパーマのビフォーアフター動画です。施術前と後のカールの違いが見られます。</p></div>
+      <div class="igitem"><a class="igthumblink" href="https://www.instagram.com/reel/DU9OgVVEi0j/" target="_blank" rel="noopener" aria-label="Instagramで投稿を見る"><span class="igthumb"><img src="images/ig/DU9OgVVEi0j.jpg" alt="松山まつげパーマの施術の様子を動画で紹介しています。" loading="lazy"><span class="igplay">▶ 動画</span></span></a><p class="igcap">松山まつげパーマの施術の様子を動画で紹介しています。</p></div>
+      <div class="igitem"><a class="igthumblink" href="https://www.instagram.com/reel/DVn4e0ZAaTp/" target="_blank" rel="noopener" aria-label="Instagramで投稿を見る"><span class="igthumb"><img src="images/ig/DVn4e0ZAaTp.jpg" alt="小学生のまつげパーマの様子です。逆まつげのご相談も受けています。" loading="lazy"><span class="igplay">▶ 動画</span></span></a><p class="igcap">小学生のまつげパーマの様子です。逆まつげのご相談も受けています。</p></div>
+      <div class="igitem"><a class="igthumblink" href="https://www.instagram.com/p/DUJO1YTEjL9/" target="_blank" rel="noopener" aria-label="Instagramで投稿を見る"><span class="igthumb"><img src="images/ig/DUJO1YTEjL9.jpg" alt="まつげパーマのご案内です。お子さま連れの施術やペア割の相談もできます。" loading="lazy"></span></a><p class="igcap">まつげパーマのご案内です。お子さま連れの施術やペア割の相談もできます。</p></div>
+      <div class="igitem"><a class="igthumblink" href="https://www.instagram.com/reel/DU9N0nNk_YR/" target="_blank" rel="noopener" aria-label="Instagramで投稿を見る"><span class="igthumb"><img src="images/ig/DU9N0nNk_YR.jpg" alt="店主・中岡有里による、まつげパーマの施術動画です。" loading="lazy"><span class="igplay">▶ 動画</span></span></a><p class="igcap">店主・中岡有里による、まつげパーマの施術動画です。</p></div>
+      <div class="igitem"><a class="igthumblink" href="https://www.instagram.com/reel/DUKs7BBEztz/" target="_blank" rel="noopener" aria-label="Instagramで投稿を見る"><span class="igthumb"><img src="images/ig/DUKs7BBEztz.jpg" alt="逆まつげとまつげパーマについての投稿です。" loading="lazy"><span class="igplay">▶ 動画</span></span></a><p class="igcap">逆まつげとまつげパーマについての投稿です。</p></div>
+      <div class="igitem"><a class="igthumblink" href="https://www.instagram.com/reel/DUu8yeDkn_p/" target="_blank" rel="noopener" aria-label="Instagramで投稿を見る"><span class="igthumb"><img src="images/ig/DUu8yeDkn_p.jpg" alt="まつげパーマの施術の様子を動画で紹介しています。" loading="lazy"><span class="igplay">▶ 動画</span></span></a><p class="igcap">まつげパーマの施術の様子を動画で紹介しています。</p></div>
+      <div class="igitem"><a class="igthumblink" href="https://www.instagram.com/reel/DUuN-BLEhQO/" target="_blank" rel="noopener" aria-label="Instagramで投稿を見る"><span class="igthumb"><img src="images/ig/DUuN-BLEhQO.jpg" alt="まつげパーマの施術の様子を動画で紹介しています。" loading="lazy"><span class="igplay">▶ 動画</span></span></a><p class="igcap">まつげパーマの施術の様子を動画で紹介しています。</p></div>
+      <div class="igitem"><a class="igthumblink" href="https://www.instagram.com/reel/DUsIBNukudv/" target="_blank" rel="noopener" aria-label="Instagramで投稿を見る"><span class="igthumb"><img src="images/ig/DUsIBNukudv.jpg" alt="松山まつげパーマの施術の様子を動画で紹介しています。" loading="lazy"><span class="igplay">▶ 動画</span></span></a><p class="igcap">松山まつげパーマの施術の様子を動画で紹介しています。</p></div>
+      <div class="igitem"><a class="igthumblink" href="https://www.instagram.com/reel/DUKhuvokqw-/" target="_blank" rel="noopener" aria-label="Instagramで投稿を見る"><span class="igthumb"><img src="images/ig/DUKhuvokqw-.jpg" alt="上下のまつげパーマと、逆まつげ・まつげの生え癖についての投稿です。" loading="lazy"><span class="igplay">▶ 動画</span></span></a><p class="igcap">上下のまつげパーマと、逆まつげ・まつげの生え癖についての投稿です。</p></div>
+      <div class="igitem"><a class="igthumblink" href="https://www.instagram.com/reel/DUKe4v9kk7g/" target="_blank" rel="noopener" aria-label="Instagramで投稿を見る"><span class="igthumb"><img src="images/ig/DUKe4v9kk7g.jpg" alt="まつげパーマ（マツパ）の施術の様子を動画で紹介しています。" loading="lazy"><span class="igplay">▶ 動画</span></span></a><p class="igcap">まつげパーマ（マツパ）の施術の様子を動画で紹介しています。</p></div>
+      <div class="igitem"><a class="igthumblink" href="https://www.instagram.com/p/DeS325BAdTa/" target="_blank" rel="noopener" aria-label="Instagramで投稿を見る"><span class="igthumb"><img src="images/ig/DeS325BAdTa.jpg" alt="まつげパーマの仕上がり写真です。" loading="lazy"></span></a><p class="igcap">まつげパーマの仕上がり写真です。</p></div>
+      <div class="igitem"><a class="igthumblink" href="https://www.instagram.com/p/DD0YrpRTefE/" target="_blank" rel="noopener" aria-label="Instagramで投稿を見る"><span class="igthumb"><img src="images/ig/DD0YrpRTefE.jpg" alt="まつ毛パーマ専門のメニュー紹介です。遠赤外線まつげパーマは4,000円です。" loading="lazy"></span></a><p class="igcap">まつ毛パーマ専門のメニュー紹介です。遠赤外線まつげパーマは4,000円です。</p></div>
+      <div class="igitem"><a class="igthumblink" href="https://www.instagram.com/p/Cw_sSy5v6Lw/" target="_blank" rel="noopener" aria-label="Instagramで投稿を見る"><span class="igthumb"><img src="images/ig/Cw_sSy5v6Lw.jpg" alt="回数券と、遠赤外線と煌水（キラ水）を使うまつげパーマの紹介です。" loading="lazy"></span></a><p class="igcap">回数券と、遠赤外線と煌水（キラ水）を使うまつげパーマの紹介です。</p></div>
+      <div class="igitem"><a class="igthumblink" href="https://www.instagram.com/p/C0iUG9cP7ur/" target="_blank" rel="noopener" aria-label="Instagramで投稿を見る"><span class="igthumb"><img src="images/ig/C0iUG9cP7ur.jpg" alt="まつげパーマのクーポンとサブスクのご案内です。" loading="lazy"></span></a><p class="igcap">まつげパーマのクーポンとサブスクのご案内です。</p></div>
+      <div class="igitem"><a class="igthumblink" href="https://www.instagram.com/p/CznsNHEv7Iu/" target="_blank" rel="noopener" aria-label="Instagramで投稿を見る"><span class="igthumb"><img src="images/ig/CznsNHEv7Iu.jpg" alt="まつげパーマのクーポンのご案内です。" loading="lazy"></span></a><p class="igcap">まつげパーマのクーポンのご案内です。</p></div>
+      <div class="igitem"><a class="igthumblink" href="https://www.instagram.com/reel/Crie7hRAThU/" target="_blank" rel="noopener" aria-label="Instagramで投稿を見る"><span class="igthumb"><img src="images/ig/Crie7hRAThU.jpg" alt="まつげパーマの施術の様子を動画で紹介しています。" loading="lazy"><span class="igplay">▶ 動画</span></span></a><p class="igcap">まつげパーマの施術の様子を動画で紹介しています。</p></div>
+      <div class="igitem"><a class="igthumblink" href="https://www.instagram.com/reel/Crid06TvZy1/" target="_blank" rel="noopener" aria-label="Instagramで投稿を見る"><span class="igthumb"><img src="images/ig/Crid06TvZy1.jpg" alt="まつげパーマモデルの施術の様子を動画で紹介しています。" loading="lazy"><span class="igplay">▶ 動画</span></span></a><p class="igcap">まつげパーマモデルの施術の様子を動画で紹介しています。</p></div>
+      <div class="igitem"><a class="igthumblink" href="https://www.instagram.com/p/CN2HLkCDEi3/" target="_blank" rel="noopener" aria-label="Instagramで投稿を見る"><span class="igthumb"><img src="images/ig/CN2HLkCDEi3.jpg" alt="逆まつげに悩むお子さまと、まつげパーマについての体験投稿です。" loading="lazy"></span></a><p class="igcap">逆まつげに悩むお子さまと、まつげパーマについての体験投稿です。</p></div>
+      <div class="igitem"><a class="igthumblink" href="https://www.instagram.com/p/BWj-WvShfmK/" target="_blank" rel="noopener" aria-label="Instagramで投稿を見る"><span class="igthumb"><img src="images/ig/BWj-WvShfmK.jpg" alt="まつげパーマのビフォーアフター写真です。" loading="lazy"></span></a><p class="igcap">まつげパーマのビフォーアフター写真です。</p></div>
+      <div class="igitem"><a class="igthumblink" href="https://www.instagram.com/p/BVj8akQBBwS/" target="_blank" rel="noopener" aria-label="Instagramで投稿を見る"><span class="igthumb"><img src="images/ig/BVj8akQBBwS.jpg" alt="まつ毛パーマ専門の紹介です。まつげ美容液での育毛ケアも扱っています。" loading="lazy"></span></a><p class="igcap">まつ毛パーマ専門の紹介です。まつげ美容液での育毛ケアも扱っています。</p></div>
+      <div class="igitem"><a class="igthumblink" href="https://www.instagram.com/reel/CwFBuCgBCPC/" target="_blank" rel="noopener" aria-label="Instagramで投稿を見る"><span class="igthumb"><img src="images/ig/CwFBuCgBCPC.jpg" alt="眉カット（700円）の様子です。まつげと合わせた目元のケアも相談できます。" loading="lazy"><span class="igplay">▶ 動画</span></span></a><p class="igcap">眉カット（700円）の様子です。まつげと合わせた目元のケアも相談できます。</p></div>
+    </div>  </div>
 </section>
 
 </main>
