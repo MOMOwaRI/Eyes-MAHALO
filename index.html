@@ -377,6 +377,24 @@ footer{text-align:center;font-size:12.5px;padding:26px 0 100px;color:#9a8578}
 .nav{display:flex;gap:5px;flex-wrap:wrap;justify-content:center;padding:10px 12px 0}.nav a{border:1px solid var(--pink);border-radius:999px;padding:4px 10px;text-decoration:none;font-size:12px;font-weight:700;color:var(--ink);background:#fff;white-space:nowrap}
 .win{border:1px solid #f0d9d0;border-radius:14px;overflow:hidden;margin:16px 0;background:#fff}.winhead{display:flex;justify-content:space-between;align-items:center;background:var(--mist);padding:9px 14px;font-weight:700;font-size:13.5px;color:var(--ink)}.winhead a{color:var(--leaf);text-decoration:none;font-size:12.5px}.win iframe{width:100%;height:540px;border:0;display:block}
 .cmp{width:100%;border-collapse:collapse;margin-top:6px}.cmp th,.cmp td{border-bottom:1px solid #f0d9d0;padding:11px 8px;text-align:left;font-size:14px;vertical-align:top}.cmp th{width:32%;color:var(--ink);background:#fff5f0;font-weight:700}
+/* visual summary */
+.visual-points{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:6px 0 22px}
+.vpoint{background:#fff;border:1px solid #f0d9d0;border-radius:999px 999px 18px 18px;padding:20px 6px 14px;text-align:center}
+.vpoint b{display:block;font:700 clamp(20px,5vw,30px)/1.15 "Shippori Mincho B1",serif;color:var(--leaf)}
+.vpoint span{display:block;margin-top:5px;font-size:12px;font-weight:700;color:var(--ink);line-height:1.5}
+.route{display:grid;grid-template-columns:1fr auto 1.15fr auto 1fr;gap:8px;align-items:stretch;margin:4px 0 10px}
+.rnode{background:#fff;border:1px solid #f0d9d0;border-radius:18px;padding:14px 6px;text-align:center;display:flex;flex-direction:column;justify-content:center;min-width:0}
+.rnode b{font:700 15px/1.45 "Shippori Mincho B1",serif;color:var(--ink)}
+.rnode span{font-size:11.5px;line-height:1.5}
+.rnode.main{background:var(--leaf);border-color:var(--leaf)}
+.rnode.main b,.rnode.main span{color:#fff}
+.rarrow{display:flex;flex-direction:column;justify-content:center;align-items:center;min-width:52px;color:var(--leaf);font-weight:700;text-align:center}
+.rarrow span{font-size:11px;line-height:1.4;color:var(--ink)}
+.rarrow i{font-style:normal;font-size:20px;line-height:1.2}
+.bubbles{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:18px}
+.bubble{position:relative;background:#fff;border:1.5px solid var(--pink);border-radius:999px;padding:8px 14px;font-weight:700;color:var(--ink);font-size:13.5px;line-height:1.6}
+.bubble::after{content:"";position:absolute;left:24px;bottom:-6px;width:10px;height:10px;background:#fff;border-right:1.5px solid var(--pink);border-bottom:1.5px solid var(--pink);transform:rotate(45deg)}
+@media(max-width:560px){.visual-points{grid-template-columns:repeat(2,1fr)}.route{grid-template-columns:1fr auto 1.05fr auto 1fr;gap:5px}.rnode{padding:11px 3px}.rnode b{font-size:12.5px}.rnode span{font-size:10px}.rarrow{min-width:42px}.rarrow span{font-size:9.5px}.rarrow i{font-size:16px}.rnode.main span{font-size:9px;letter-spacing:-.03em}}
 /* chat bot */
 .chatbtn{position:fixed;right:max(14px, calc(50% - 374px));bottom:calc(84px + env(safe-area-inset-bottom,0px));z-index:11;background:var(--leaf);color:#fff;border:0;border-radius:999px;padding:12px 18px;font:700 14px "Zen Kaku Gothic New",sans-serif;box-shadow:0 10px 24px -8px rgba(207,111,141,.7);cursor:pointer}
 .chatpanel{position:fixed;right:max(12px, calc(50% - 372px));bottom:calc(140px + env(safe-area-inset-bottom,0px));z-index:12;width:min(92vw,350px);max-height:62vh;display:none;flex-direction:column;background:#fff;border:1px solid #f0d9d0;border-radius:16px;box-shadow:0 18px 40px -12px rgba(90,66,56,.35);overflow:hidden}
@@ -508,6 +526,34 @@ html.js .mrv.in{opacity:1;transform:none}
     <p>テラヘルツ波（遠赤外線）を出す煌水（キラ水）を使ったまつげパーマを行っています。まつげだけでなく、キラ水ヘッドスパとの同時施術も人気です。</p>
     <p>「ヘッドスパも一緒に受けたい」という方は、予約時にご相談ください。</p>
     <p class="note">施術の感じ方や仕上がりには個人差があります。特定の美容効果を保証するものではありません。</p>
+  </div>
+</section>
+
+
+<section class="tint" id="visual">
+  <div class="w">
+    <p class="sub">ひと目で分かる</p>
+    <h2>数字と動線で見る、<wbr>Eyes MAHALO</h2>
+    <div class="visual-points" aria-label="料金・施術時間・施術歴・駐車場">
+      <div class="vpoint"><b>4,000円</b><span>基本メニュー</span></div>
+      <div class="vpoint"><b>約40分</b><span>施術時間</span></div>
+      <div class="vpoint"><b>15年以上</b><span>まつげパーマ歴</span></div>
+      <div class="vpoint"><b>3台</b><span>駐車場</span></div>
+    </div>
+    <div class="route" aria-label="松山市駅とフジグラン松山からのアクセス">
+      <div class="rnode"><b>松山市駅</b><span>大街道方面からも</span></div>
+      <div class="rarrow"><span>車で約5分</span><i>→</i></div>
+      <div class="rnode main"><b>Eyes MAHALO</b><span>MAHALOビル1階</span></div>
+      <div class="rarrow"><span>徒歩約3分</span><i>↔</i></div>
+      <div class="rnode"><b>フジグラン松山</b><span>買い物の前後に</span></div>
+    </div>
+    <p class="note" style="text-align:center">古町駅からも徒歩約3分。車や自転車での移動が多い松山でも、通いやすい場所です。</p>
+    <div class="bubbles" aria-label="お店の雰囲気">
+      <span class="bubble">美容室感覚で気軽</span>
+      <span class="bubble">普段着のまま</span>
+      <span class="bubble">ベビー・お子様連れOK</span>
+      <span class="bubble">相談だけでもOK</span>
+    </div>
   </div>
 </section>
 
