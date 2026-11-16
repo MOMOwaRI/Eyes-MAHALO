@@ -68,4 +68,7 @@
 - Googleマップ：https://maps.google.com/?q=Eyes+MAHALO+松山市味酒町3-2-29
 - LINE予約・相談：https://lin.ee/q8vBvt1
 - MAHALOグループ公式サイト：https://www.hair-mahalo.com/
+- hair ID salon MAHALO（同じビルの2階の美容室）：https://momowari.github.io/MAHALO/lp.html
+- Lea Mahalo（同じビル1階の雑貨とお洋服のお店）：https://momowari.github.io/Lea-Mahalo/
+- OHANAシェア＊プロジェクト（100円券の物々交換）：https://momowari.github.io/OHANA/
 - 口コミはミニモにも掲載されています
