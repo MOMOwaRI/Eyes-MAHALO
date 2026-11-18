@@ -1138,5 +1138,14 @@ window.__t=function(k){var D=window.__I18N[window.__lang];return (D&&D[k])||null
   document.documentElement.lang=(window.__lang==="zh"?"zh-CN":window.__lang);
 })();
 </script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a'):null;if(!a)return;
+  var h=a.getAttribute('href')||'';
+  if(typeof gtag!=='function')return;
+  if(h.indexOf('tel:')===0){gtag('event','tel_click',{event_category:'cv',link_url:h});}
+  else if(/(lin\.ee|line\.me)/.test(h)){gtag('event','line_click',{event_category:'cv',link_url:h});}
+});
+</script>
 </body>
 </html>
